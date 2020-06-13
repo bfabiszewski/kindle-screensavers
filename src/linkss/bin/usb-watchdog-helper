@@ -1,0 +1,117 @@
+#!/bin/sh
+#
+# $Id: usb-watchdog-helper 15011 2018-06-02 16:58:21Z NiLuJe $
+#
+
+# Get hackname from the script's path (NOTE: Will only work for scripts called from /mnt/us/${KH_HACKNAME}/bin)
+KH_HACKNAME="${0##/mnt/us/}"
+KH_HACKNAME="${KH_HACKNAME%%/bin/*}"
+
+# Try to pull our custom helper lib
+_KH_FUNCS="/mnt/us/${KH_HACKNAME}/bin/libkh5"
+if [ -f ${_KH_FUNCS} ] ; then
+    . ${_KH_FUNCS}
+else
+    # Pull default helper functions for logging
+    _FUNCTIONS=/etc/upstart/functions
+    [ -f ${_FUNCTIONS} ] && . ${_FUNCTIONS}
+    # We couldn't get our custom lib, abort
+    f_log W usb-watchdog-helper script "" "couldn't source libkh5 from '${KH_HACKNAME}'"
+    exit 0
+fi
+
+# Make sure the screensavers shuffling script is exec'able (check if it exists first)
+if [ -f ${LINKSS_SHUFFLE} ] ; then
+    [ -x ${LINKSS_SHUFFLE} ] || chmod +x ${LINKSS_SHUFFLE}
+fi
+# Make sure the fc cache script is exec'able (check if it exists first, in case we're ss' watchdog, and fonts isn't installed)
+if [ -f ${FONTCONFIG_HELPER} ] ; then
+    [ -x ${FONTCONFIG_HELPER} ] || chmod +x ${FONTCONFIG_HELPER}
+fi
+# Make sure shlock is exec'able
+[ -x ${USBWD_LOCK_BIN} ] || chmod +x ${USBWD_LOCK_BIN}
+# Make sure our lockfile has somewhere to live
+[ -d ${USBWD_LOCK_DIR} ] || mkdir -p ${USBWD_LOCK_DIR}
+
+# Add the PID of the lipc-wait-event(s) to the list of running daemons to kill
+echo "$( pidof lipc-wait-event )" >> ${WATCHDOG_PID}
+# Add our PID to the list of running daemons to kill
+echo "$$" >> ${WATCHDOG_PID}
+
+while read line ; do
+    if [ -f "${USBWD_REBOOT_FILE}" ] ; then
+        # We asked for a reboot on unplug, let's see...
+        if echo ${line} | grep -q "usbPlugOut" ; then
+            # Yep, we're plugged out! Let's do our stuff in a locked session to avoid double-reboots...
+            if ${USBWD_LOCK_BIN} -p $$ -f ${USBWD_LOCK_FILE} ; then
+                # We only want to do this once, so kill the reboot file
+                rm -f "${USBWD_REBOOT_FILE}"
+                # Log our restart
+                kh_msg "restarting framework via USB watchdog" I q
+                # Give us some time to settle, and provide some feedback to the user
+                unset wd_spinner
+                for wd_countdown in $(seq 1 10) ; do
+                    eips 0 $((${EIPS_MAXLINES} - 2)) " restarting framework${wd_spinner}"
+                    wd_spinner="${wd_spinner}."
+                    sleep 1
+                done
+                # Try to shuffle screensavers
+                if [ -f "${LINKSS_BASEDIR}/auto" -a -f "${LINKSS_SHUFFLE}" ] ; then
+                    ${LINKSS_SHUFFLE} watchdog
+                    # If it failed for some reason (empty screensavers directory after the parsing?), disable the hack
+                    if [ $? -ne 0 ] ; then
+                        kh_msg "no valid screensavers, disabling hack" W v
+                        stop linkss
+                    fi
+                fi
+                # Sync the disk to avoid wreaking havoc on the FS
+                sync
+                # On the fonts side of things, make sure at least the framework & KF8 reader use an up to date cache.
+                if [ -f "${LINKFONTS_BASEDIR}/auto" ] ; then
+                    # Try to refresh fontconfig cache (Might take a while!)
+                    if [ -f "${FONTCONFIG_HELPER}" ] ; then
+                        ${FONTCONFIG_HELPER}
+                    fi
+                    # Sync the disk to avoid wreaking havoc on the FS
+                    sync
+                    # Restart framework & webreader
+                    # Show the splash screen...
+                    . /etc/upstart/splash
+                    splash_cleanup
+                    splash_init || kh_msg "cannot init splash module" E a
+                    splash_progress 0
+
+                    restart webreader
+                    restart framework
+
+                    # And, apparently, we have to do everything ourselves...
+                    for splash_bar in $(seq 1 25) ; do
+                        splash_progress $((splash_bar * 4))
+                        sleep 1
+                    done
+                else
+                    # And restart the framework...
+                    # Show the splash screen...
+                    . /etc/upstart/splash
+                    splash_cleanup
+                    splash_init || kh_msg "cannot init splash module" E a
+                    splash_progress 0
+
+                    # NOTE: This won't actually reload linkss itself (restart doesn't actually trigger the on stop/start events)
+                    restart framework
+
+                    # And, apparently, we have to do everything ourselves...
+                    for splash_bar in $(seq 1 25) ; do
+                        splash_progress $((splash_bar * 4))
+                        sleep 1
+                    done
+                fi
+                # And then remove our lock file
+                rm -rf ${USBWD_LOCK_FILE}
+            else
+                # Meep! We're already locked doing a reboot, something went wrong...
+                kh_msg "we're already restarting the framework via USB watchdog, go away" W a "framework restart already in progress"
+            fi
+        fi
+    fi
+done

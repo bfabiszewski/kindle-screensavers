@@ -1,0 +1,416 @@
+{
+	"comment001": "ScreenSavers KUAL companion",
+	"comment002": "",
+	"comment003": "It serves as a cheap configuration UI for the various ways the hack can be customized",
+	"comment004": "",
+	"comment005": "$Id: menu.json 16255 2019-07-23 22:01:41Z NiLuJe $",
+	"comment006": "",
+	"items": [
+	{
+		"name": "Screen Savers",
+		"priority": 1,
+		"items": [
+		{
+			"name": "Show current version",
+			"action": "./bin/linkss.sh",
+			"params": "show_version",
+			"exitmenu": false,
+			"checked": true,
+			"refresh": false,
+			"status": false,
+			"internal": "status Print the current version of the hack"
+		},
+		{
+			"name": "Enable ScreenSavers Hack (Default)",
+			"if": "\"/mnt/us/linkss/auto\" -f!",
+			"action": "./bin/linkss.sh",
+			"params": "enable_auto",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Enable the ScreenSavers Hack"
+		},
+		{
+			"name": "Disable ScreenSavers Hack",
+			"if": "\"/mnt/us/linkss/auto\" -f",
+			"action": "./bin/linkss.sh",
+			"params": "disable_auto",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Disable the ScreenSavers Hack"
+		},
+		{
+			"name": "Enable verbose mode",
+			"if": "\"/mnt/us/linkss/verbose\" -f!",
+			"action": "./bin/linkss.sh",
+			"params": "enable_verbose",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Make the ScreenSavers Hack verbose"
+		},
+		{
+			"name": "Disable verbose mode (Default)",
+			"if": "\"/mnt/us/linkss/verbose\" -f",
+			"action": "./bin/linkss.sh",
+			"params": "disable_verbose",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Make the ScreenSavers Hack quiet"
+		},
+		{
+			"name": "Enable Waterstones workaround",
+			"if": "\"/mnt/us/linkss/beta\" -f! \"/var/local/custom_screensavers/bg_medium_ss00.png\" -f \"/var/local/custom_screensavers/bg_ss00.png\" -f \"KindlePaperWhite\" -m \"KindlePaperWhite2\" -m \"KindleBasic\" -m \"KindleVoyage\" -m  \"KindlePaperWhite3\" -m \"KindleOasis\" -m  \"KindleBasic2\" -m \"KindleOasis2\" -m \"KindlePaperWhite4\" -m \"KindleBasic3\" -m \"KindleOasis3\" -m || || || || || || || || || || && || &&",
+			"action": "./bin/linkss.sh",
+			"params": "enable_beta",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Try to workaround Waterstones' trickery"
+		},
+		{
+			"name": "Disable Waterstones support (Default)",
+			"if": "\"/mnt/us/linkss/beta\" -f \"KindlePaperWhite\" -m \"KindlePaperWhite2\" -m \"KindleBasic\" -m \"KindleVoyage\" -m  \"KindlePaperWhite3\" -m \"KindleOasis\" -m  \"KindleBasic2\" -m \"KindleOasis2\" -m \"KindlePaperWhite4\" -m \"KindleBasic3\" -m \"KindleOasis3\" -m || || || || || || || || || || &&",
+			"action": "./bin/linkss.sh",
+			"params": "disable_beta",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Disable Waterstones support"
+		},
+		{
+			"name": "Enable autoreboot feature (Legacy Def.)",
+			"if": "\"/mnt/us/linkss/autoreboot\" -f! \"/mnt/us/linkfonts/autoreboot\" -f! &&",
+			"action": "./bin/linkss.sh",
+			"params": "enable_autoreboot",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Enable the autoreboot feature"
+		},
+		{
+			"name": "Disable autoreboot feature (K5 Default)",
+			"if": "\"/mnt/us/linkss/autoreboot\" -f \"/mnt/us/linkfonts/autoreboot\" -f ||",
+			"action": "./bin/linkss.sh",
+			"params": "disable_autoreboot",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Disable the autoreboot feature"
+		},
+		{
+			"name": "Trigger autoreboot at next unplug",
+			"if": "\"/mnt/us/linkss/reboot\" -f! \"/mnt/us/linkss/autoreboot\" -f \"/mnt/us/linkfonts/reboot\" -f! \"/mnt/us/linkfonts/autoreboot\" -f && || &&",
+			"action": "./bin/linkss.sh",
+			"params": "trigger_autoreboot",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Schedule a framework restart on unplug"
+		},
+		{
+			"name": "Abort autoreboot at next unplug",
+			"if": "\"/mnt/us/linkss/reboot\" -f \"/mnt/us/linkfonts/reboot\" -f ||",
+			"action": "./bin/linkss.sh",
+			"params": "abort_autoreboot",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Abort the scheduled framework restart"
+		},
+		{
+			"name": "Restart framework now",
+			"action": "./bin/linkss.sh",
+			"params": "framework_restart",
+			"exitmenu": true,
+			"refresh": false,
+			"status": false,
+			"internal": "status Restart the framework now"
+		},
+		{
+			"name": "Screen Savers Behavior",
+			"priority": 1,
+			"items": [
+			{
+				"name": "Image Cycle (Default)",
+				"if": "\"/mnt/us/linkss/cover\" -f \"/mnt/us/linkss/last\" -f \"/mnt/us/linkss/random\" -f \"/mnt/us/linkss/shuffle\" -f || || ||",
+				"action": "./bin/linkss.sh",
+				"params": "mode_cycle",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Use custom images as ScreenSavers"
+			},
+			{
+				"name": "Random Image Cycle",
+				"if": "\"/mnt/us/linkss/random\" -f!",
+				"action": "./bin/linkss.sh",
+				"params": "mode_cycle_random",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Use custom images in a random order as ScreenSavers"
+			},
+			{
+				"name": "Shuffled Image Cycle",
+				"if": "\"/mnt/us/linkss/shuffle\" -f!",
+				"action": "./bin/linkss.sh",
+				"params": "mode_cycle_shuffle",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Shuffle custom ScreenSavers images on autoreboots"
+			},
+			{
+				"name": "Last Screen",
+				"if": "\"/mnt/us/linkss/last\" -f! \"KindleTouch\" -m \"KindlePaperWhite\" -m \"KindlePaperWhite2\" -m \"KindleBasic\" -m \"KindleVoyage\" -m  \"KindlePaperWhite3\" -m \"KindleOasis\" -m  \"KindleBasic2\" -m \"KindleOasis2\" -m \"KindlePaperWhite4\" -m \"KindleBasic3\" -m \"KindleOasis3\" -m || || || || || || || || || || || &&",
+				"action": "./bin/linkss.sh",
+				"params": "mode_last",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Use the last screen shown as ScreenSaver"
+			},
+			{
+				"name": "Cover",
+				"if": "\"/mnt/us/linkss/cover\" -f!",
+				"action": "./bin/linkss.sh",
+				"params": "mode_cover",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Use the book cover as ScreenSaver"
+			}
+			]
+		},
+		{
+			"name": "Cover Mode Behavior",
+			"if": "\"/mnt/us/linkss/cover\" -f",
+			"priority": 2,
+			"items": [
+			{
+				"name": "White Borders (Default)",
+				"if": "\"/mnt/us/linkss/black\" -f \"/mnt/us/linkss/stretch\" -f! \"/mnt/us/linkss/autocrop\" -f! && &&",
+				"action": "./bin/linkss.sh",
+				"params": "white_borders",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Use white borders around the cover"
+			},
+			{
+				"name": "Black Borders",
+				"if": "\"/mnt/us/linkss/black\" -f! \"/mnt/us/linkss/stretch\" -f! \"/mnt/us/linkss/autocrop\" -f! && &&",
+				"action": "./bin/linkss.sh",
+				"params": "black_borders",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Use black borders around the cover"
+			},
+			{
+				"name": "Letterbox (Default)",
+				"if": "\"/mnt/us/linkss/stretch\" -f \"/mnt/us/linkss/autocrop\" -f ||",
+				"action": "./bin/linkss.sh",
+				"params": "letterbox_cover",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Keep cover aspect ratio"
+			},
+			{
+				"name": "Stretch to fullscreen",
+				"if": "\"/mnt/us/linkss/stretch\" -f!",
+				"action": "./bin/linkss.sh",
+				"params": "stretch_cover",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Stretch to fill, disregard aspect ratio"
+			},
+			{
+				"name": "Autocrop",
+				"if": "\"/mnt/us/linkss/autocrop\" -f!",
+				"action": "./bin/linkss.sh",
+				"params": "autocrop_cover",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Zoom to fill, autocrop to keep AR"
+			},
+			{
+				"name": "Workaround broken image of first sleep cycle",
+				"if": "\"/mnt/us/linkss/sleep\" -f! \"Kindle2\" -m \"KindleDX\" -m \"KindleDXG\" -m \"Kindle3\" -m \"Kindle4\" -m || || || || &&",
+				"action": "./bin/linkss.sh",
+				"params": "enable_sleep",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Workaround first sleep cycle per cover accuracy"
+			},
+			{
+				"name": "Disable first sleep cycle workaround (Default)",
+				"if": "\"/mnt/us/linkss/sleep\" -f \"Kindle2\" -m \"KindleDX\" -m \"KindleDXG\" -m \"Kindle3\" -m \"Kindle4\" -m || || || || &&",
+				"action": "./bin/linkss.sh",
+				"params": "disable_sleep",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status No specific workaround for first sleep cycle cover"
+			},
+			{
+				"name": "Add Personal Info Watermark",
+				"if": "\"/mnt/us/linkss/pinfo\" -f! \"KindleTouch\" -m \"KindlePaperWhite\" -m \"KindlePaperWhite2\" -m \"KindleBasic\" -m \"KindleVoyage\" -m  \"KindlePaperWhite3\" -m \"KindleOasis\" -m  \"KindleBasic2\" -m \"KindleOasis2\" -m \"KindlePaperWhite4\" -m \"KindleBasic3\" -m \"KindleOasis3\" -m || || || || || || || || || || || &&",
+				"action": "./bin/linkss.sh",
+				"params": "enable_pinfo",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Bottom watermark with personal info"
+			},
+			{
+				"name": "No Personal Info (Default)",
+				"if": "\"/mnt/us/linkss/pinfo\" -f \"KindleTouch\" -m \"KindlePaperWhite\" -m \"KindlePaperWhite2\" -m \"KindleBasic\" -m \"KindleVoyage\" -m  \"KindlePaperWhite3\" -m \"KindleOasis\" -m  \"KindleBasic2\" -m \"KindleOasis2\" -m \"KindlePaperWhite4\" -m \"KindleBasic3\" -m \"KindleOasis3\" -m || || || || || || || || || || || &&",
+				"action": "./bin/linkss.sh",
+				"params": "disable_pinfo",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Remove the personal info watermark"
+			},
+			{
+				"name": "No Dithering (LowMem)",
+				"if": "\"/mnt/us/linkss/lowmem\" -f!",
+				"action": "./bin/linkss.sh",
+				"params": "enable_lowmem",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Skip the software dithering"
+			},
+			{
+				"name": "FloydSteinberg Dithering (Default)",
+				"if": "\"/mnt/us/linkss/lowmem\" -f \"/mnt/us/linkss/riemersma\" -f ||",
+				"action": "./bin/linkss.sh",
+				"params": "disable_lowmem",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Enable FloydSteinberg software dithering"
+			},
+			{
+				"name": "Riemersma Dithering",
+				"if": "\"/mnt/us/linkss/lowmem\" -f \"/mnt/us/linkss/riemersma\" -f! ||",
+				"action": "./bin/linkss.sh",
+				"params": "disable_lowmem_riemersma",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Enable Riemersma software dithering"
+			},
+			{
+				"name": "Handle periodicals",
+				"if": "\"/mnt/us/linkss/periodicals\" -f!",
+				"action": "./bin/linkss.sh",
+				"params": "enable_periodicals",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Extract covers from periodicals, too"
+			},
+			{
+				"name": "Do not parse periodicals (Default)",
+				"if": "\"/mnt/us/linkss/periodicals\" -f",
+				"action": "./bin/linkss.sh",
+				"params": "disable_periodicals",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Do not extract covers from periodicals"
+			}
+			]
+		},
+		{
+			"name": "Screen Savers Tools",
+			"priority": 3,
+			"items": [
+			{
+				"name": "Preview current ScreenSaver",
+				"if": "\"/mnt/us/linkss/cover\" -f",
+				"action": "./bin/linkss.sh",
+				"params": "current_ss_preview",
+				"exitmenu": false,
+				"checked": false,
+				"refresh": false,
+				"status": false,
+				"internal": "status Preview the active ScreenSaver for 10s"
+			},
+			{
+				"name": "Clear cover cache",
+				"action": "./bin/linkss.sh",
+				"params": "tools_clear_cover_cache",
+				"exitmenu": false,
+				"checked": true,
+				"refresh": false,
+				"status": false,
+				"internal": "status Delete all processed covers"
+			},
+			{
+				"name": "Clear personal info cache",
+				"if": "\"KindleTouch\" -m \"KindlePaperWhite\" -m \"KindlePaperWhite2\" -m \"KindleBasic\" -m \"KindleVoyage\" -m  \"KindlePaperWhite3\" -m \"KindleOasis\" -m  \"KindleBasic2\" -m \"KindleOasis2\" -m \"KindlePaperWhite4\" -m \"KindleBasic3\" -m \"KindleOasis3\" -m || || || || || || || || || || ||",
+				"action": "./bin/linkss.sh",
+				"params": "tools_clear_pinfo_cache",
+				"exitmenu": false,
+				"checked": true,
+				"refresh": false,
+				"status": false,
+				"internal": "status Delete cached personal info watermark"
+			},
+			{
+				"name": "Process staging images",
+				"if": "\"KindleTouch\" -m \"KindlePaperWhite\" -m \"KindlePaperWhite2\" -m \"KindleBasic\" -m \"KindleVoyage\" -m  \"KindlePaperWhite3\" -m \"KindleOasis\" -m  \"KindleBasic2\" -m \"KindleOasis2\" -m \"KindlePaperWhite4\" -m \"KindleBasic3\" -m \"KindleOasis3\" -m || || || || || || || || || || ||",
+				"action": "./bin/linkss.sh",
+				"params": "tools_staging_process",
+				"exitmenu": false,
+				"checked": true,
+				"refresh": false,
+				"status": false,
+				"internal": "status Process images from the staging directory"
+			},
+			{
+				"name": "Reset to default behavior",
+				"action": "./bin/linkss.sh",
+				"params": "reset_trigger_files",
+				"exitmenu": false,
+				"refresh": true,
+				"status": false,
+				"internal": "status Go back to the default settings"
+			}
+			]
+		},
+		{
+			"name": "Flag for complete uninstall",
+			"if": "\"/mnt/us/linkss/uninstall\" -f!",
+			"action": "./bin/linkss.sh",
+			"params": "enable_uninstall",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Enable complete uninstall process (rm user content)"
+		},
+		{
+			"name": "Default uninstall behavior",
+			"if": "\"/mnt/us/linkss/uninstall\" -f",
+			"action": "./bin/linkss.sh",
+			"params": "disable_uninstall",
+			"exitmenu": false,
+			"refresh": true,
+			"status": false,
+			"internal": "status Do not flag this hack for complete uninstall"
+		}
+		]
+	}
+	]
+}

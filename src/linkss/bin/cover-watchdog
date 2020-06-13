@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# $Id: cover-watchdog 11112 2014-11-17 18:12:08Z NiLuJe $
+#
+
+# Get hackname from the script's path (NOTE: Will only work for scripts called from /mnt/us/${KH_HACKNAME}/bin)
+KH_HACKNAME="${0##/mnt/us/}"
+KH_HACKNAME="${KH_HACKNAME%%/bin/*}"
+
+# Try to pull our custom helper lib
+_KH_FUNCS="/mnt/us/${KH_HACKNAME}/bin/libkh5"
+if [ -f ${_KH_FUNCS} ] ; then
+    . ${_KH_FUNCS}
+else
+    # Pull default helper functions for logging
+    _FUNCTIONS=/etc/upstart/functions
+    [ -f ${_FUNCTIONS} ] && . ${_FUNCTIONS}
+    # We couldn't get our custom lib, abort
+    f_log W linkss script "" "couldn't source libkh5 from '${KH_HACKNAME}'"
+    exit 0
+fi
+
+# Cleanup on exit...
+cleanup_on_exit()
+{
+    # Remove our pidfile
+    rm -f ${COVER_WATCHDOG_PID}
+
+    # And bow out ;)
+    exit 0
+}
+
+trap cleanup_on_exit EXIT SIGTERM
+
+wd_fail_count=0
+
+# Make sure the watchdog's always up
+while true ; do
+    # Make sure we still have an helper to run, in case it gets wiped while we're running (that shouldn't happen under normal circumstances, but, hey, I've seen logs where it apparently happened...)
+    if [ -x ${COVER_WATCHDOG_HELPER} ] ; then
+        kh_msg "starting cover watchdog (lipc-wait-event)" I
+        # Reset fail counter on success
+        wd_fail_count=0
+        lipc-wait-event -m -s 0 com.lab126.appmgrd appActivating | ${COVER_WATCHDOG_HELPER}
+    else
+        # Die in a fire after 3 fails (roughly 15s)
+        if [ $wd_fail_count -gt 3 ] ; then
+            kh_msg "missing helper script, giving up on the cover watchdog" W a "no helper script, give up on cover watchdog"
+            # NOTE: We may be leaving a stale pidfile behind, but our trap, or at worse linkss/linkfonts should take care of it, and that'll pop up in the logs, so don't explicitly remove it now.
+            exit 0
+        fi
+        kh_msg "could not start cover watchdog (missing helper)" W
+        # Increment our failure counter
+        wd_fail_count=$(( wd_fail_count + 1 ))
+    fi
+    # Sleep well... (outside of the if block, because we do want to check that the helper still exists each time...)
+    sleep 5
+done

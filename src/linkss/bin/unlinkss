@@ -1,0 +1,103 @@
+#!/bin/sh
+#
+# $Id: unlinkss 15011 2018-06-02 16:58:21Z NiLuJe $
+#
+
+# Get hackname from the script's path (NOTE: Will only work for scripts called from /mnt/us/${KH_HACKNAME}/bin)
+KH_HACKNAME="${0##/mnt/us/}"
+KH_HACKNAME="${KH_HACKNAME%%/bin/*}"
+
+# Try to pull our custom helper lib
+_KH_FUNCS="/mnt/us/${KH_HACKNAME}/bin/libkh5"
+if [ -f ${_KH_FUNCS} ] ; then
+    . ${_KH_FUNCS}
+else
+    # Pull default helper functions for logging
+    _FUNCTIONS=/etc/upstart/functions
+    [ -f ${_FUNCTIONS} ] && . ${_FUNCTIONS}
+    # We couldn't get our custom lib, abort
+    f_log W linkss script "" "couldn't source libkh5 from '${KH_HACKNAME}'"
+    exit 0
+fi
+
+# TODO: Reimplement the update trap?
+
+# Kill our optionnal watchdog
+if [ -f ${WATCHDOG_PID} ] ; then
+    kh_msg "start of USB watchdog kills" I q
+    # Can't use start-stop-daemon -K, we've got the bash loop, the watchdog daemon and its helper to kill.
+    for pid in $( cat ${WATCHDOG_PID} ) ; do
+        # Check that's it's really one of our own process before killing it mercilessly :p
+        if ps -fp ${pid} | grep -q -e "${WATCHDOG_DAEMON}" -e "usbPlugOut" -e "${WATCHDOG_HELPER}" ; then
+            kh_msg "killing USB watchdog process (${pid})" I
+            kill -TERM ${pid} 2> /dev/null
+        fi
+    done
+    kh_msg "end of USB watchdog kills" I q
+    # And remove the stale pidfile
+    [ -f ${WATCHDOG_PID} ] && rm -f ${WATCHDOG_PID}
+fi
+
+# Same thing for the cover watchdog
+if [ -f ${COVER_WATCHDOG_PID} ] ; then
+    kh_msg "start of cover watchdog kills" I q
+    # Can't use start-stop-daemon -K, we've got the bash loop, the watchdog daemon and its helper to kill.
+    for pid in $( cat ${COVER_WATCHDOG_PID} ) ; do
+        # Check that's it's really one of our own process before killing it mercilessly :p
+        if ps -fp ${pid} | grep -q -e "${COVER_WATCHDOG_DAEMON}" -e "appActivating" -e "${COVER_WATCHDOG_HELPER}" ; then
+            kh_msg "killing cover watchdog process (${pid})" I
+            kill -TERM ${pid} 2> /dev/null
+        fi
+    done
+    kh_msg "end of cover watchdog kills" I q
+    # And remove the stale pidfile
+    [ -f ${COVER_WATCHDOG_PID} ] && rm -f ${COVER_WATCHDOG_PID}
+fi
+
+# Do we have stuff to unmount?
+if [ -f ${LINKSS_BASEDIR}/mounted_ss ] ; then
+    kh_msg "unmounting custom screensavers" I
+    umount -l /usr/share/blanket/screensaver
+
+    # And we're good!
+    rm -f ${LINKSS_BASEDIR}/mounted_ss
+fi
+
+# And the others, too...
+if [ -f ${LINKSS_BASEDIR}/mounted_custom_ss ] ; then
+    kh_msg "unmounting custom screensavers (custom)" I
+    umount -l /var/local/custom_screensavers
+
+    # And we're good!
+    rm -f ${LINKSS_BASEDIR}/mounted_custom_ss
+fi
+
+# Handle the tmpfs ones separately, to be safe, and log it differently...
+# Kill the bind mounts before the tmpfs itself...
+if [ -f ${LINKSS_BASEDIR}/mounted_ss_tmpfs ] ; then
+    kh_msg "unmounting custom screensavers from tmpfs" I
+    umount -l /usr/share/blanket/screensaver
+
+    # And we're good!
+    rm -f ${LINKSS_BASEDIR}/mounted_ss_tmpfs
+fi
+
+# And the others, too...
+if [ -f ${LINKSS_BASEDIR}/mounted_custom_ss_tmpfs ] ; then
+    kh_msg "unmounting custom screensavers (custom) from tmpfs" I
+    umount -l /var/local/custom_screensavers
+
+    # And we're good!
+    rm -f ${LINKSS_BASEDIR}/mounted_custom_ss_tmpfs
+fi
+
+# And finally, the tmpfs itself
+if [ -f ${LINKSS_BASEDIR}/mounted_tmpfs ] ; then
+    kh_msg "unmounting screensavers tmpfs" I
+    umount -l ${LINKSS_TMPFS_BASEDIR}
+
+    # And we're good!
+    rm -f ${LINKSS_BASEDIR}/mounted_tmpfs
+fi
+
+return 0

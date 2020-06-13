@@ -1,0 +1,291 @@
+#!/bin/sh
+#
+# $Id: cover-extract 16254 2019-07-23 21:58:00Z NiLuJe $
+#
+
+# Get hackname from the script's path (NOTE: Will only work for scripts called from /mnt/us/${KH_HACKNAME}/bin)
+KH_HACKNAME="${0##/mnt/us/}"
+KH_HACKNAME="${KH_HACKNAME%%/bin/*}"
+
+# Try to pull our custom helper lib
+_KH_FUNCS="/mnt/us/${KH_HACKNAME}/bin/libkh5"
+if [ -f ${_KH_FUNCS} ] ; then
+    . ${_KH_FUNCS}
+else
+    # Pull default helper functions for logging
+    _FUNCTIONS=/etc/upstart/functions
+    [ -f ${_FUNCTIONS} ] && . ${_FUNCTIONS}
+    # We couldn't get our custom lib, abort
+    f_log W linkss script "" "couldn't source libkh5 from '${KH_HACKNAME}'"
+    exit 0
+fi
+
+# First of all, check if we have Python installed...
+if [ ! -f "${PYTHON}" ] ; then
+    kh_msg "python isn't installed, aborting..." W q
+    return 1
+fi
+
+# Use the right prefix for our model...
+# NOTE: The KT2 & KV both did away with the size hint... So did FW 5.6 on the PW2, so ties this to the FW version first...
+if [ "${K5_ATLEAST_55}" == "true" ] ; then
+    ss_prefix="bg_ss"
+elif [ "${IS_PW}" == "true" ] ; then
+    ss_prefix="bg_medium_ss"
+else
+    ss_prefix="bg_xsmall_ss"
+fi
+
+# Get the filename of the last book opened (Mobi/KF8 only)...
+# Do we want to handle periodicals?
+if [ -f "${LINKSS_BASEDIR}/periodicals" ] ; then
+    cc_query_result="$(sqlite3 /var/local/cc.db 'SELECT p_location,p_cdeKey,p_mimeType FROM Entries WHERE p_location NOT NULL AND p_cdeType IN ("EBOK", "PDOC", "MAGZ", "NWPR") AND p_mimeType IN ("application/x-mobipocket-ebook", "application/x-mobi8-ebook", "application/x-kfx-ebook", "application/x-mobipocket-subscription", "application/x-mobipocket-subscription-magazine", "application/x-mobipocket-subscription-feed") AND p_type!="Entry:Item:Dictionary" ORDER BY p_lastAccess DESC LIMIT 1;')"
+else
+    cc_query_result="$(sqlite3 /var/local/cc.db 'SELECT p_location,p_cdeKey,p_mimeType FROM Entries WHERE p_location NOT NULL AND p_cdeType IN ("EBOK", "PDOC") AND p_mimeType IN ("application/x-mobipocket-ebook", "application/x-mobi8-ebook", "application/x-kfx-ebook") AND p_type!="Entry:Item:Dictionary" ORDER BY p_lastAccess DESC LIMIT 1;')"
+fi
+
+# Check if it was successful...
+if [ $? -ne 0 ] ; then
+    kh_msg "couldn't get the location of the last book opened, aborting..." W q
+    return 1
+fi
+
+# Split on the separator (|) to get the filename, cdekey & mimetype
+last_read_file="${cc_query_result%%|*}"
+# Consume the just-processed string
+cc_query_result="${cc_query_result#*|}"
+
+last_read_key="${cc_query_result%%|*}"
+cc_query_result="${cc_query_result#*|}"
+
+last_read_mime="${cc_query_result%%|*}"
+#cc_query_result="${cc_query_result#*|}"
+#last_read_ext="${last_read_file##*.}"
+
+# Check that the file exists...
+if [ ! -f "${last_read_file}" ] ; then
+    kh_msg "couldn't open last read file '${last_read_file}', aborting..." W q
+    return 1
+fi
+
+# If we have a legacy key (sha1sum), strip the leading star (can't use a star in filenames ;))...
+last_read_key="${last_read_key#\*}"
+
+# Poor man's cache, to avoid an extra ln when we open the same book multiple times successively
+# Try to get the key of the last book read from the previous trigger...
+if [ -f "${LINKSS_BASEDIR}/etc/last_read" ] ; then
+    previous_last_read="$(cat "${LINKSS_BASEDIR}/etc/last_read")"
+else
+    previous_last_read=""
+fi
+
+# Then write the current one
+echo "${last_read_key}" > "${LINKSS_BASEDIR}/etc/last_read"
+
+# If the key didn't change, go away :)
+if [ "${previous_last_read}" == "${last_read_key}" ] ; then
+    kh_msg "current cover is already ${last_read_key} :)" I q
+    return 0
+fi
+
+# Check if we already have the file in cache...
+if [ -f "${LINKSS_BASEDIR}/cover_cache/cover_${last_read_key}.png" ] ; then
+    kh_msg "cache hit for ${last_read_key} :)" I q
+    # Again, symlink from base-us
+    ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/cover_${last_read_key}.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+    return 0
+fi
+
+# Try to extract the cover via our stripped down Kindle Unpack & KFX Meta...
+kh_msg "trying to extract cover for ${last_read_key} . . ." I q
+# We're working on a tmpfs, so make sure it's clear beforehand...
+for file in ${LINKSS_TMPFS_CACHE}/* ; do
+    [ -f "${file}" ] && rm -f "${file}"
+done
+# Check if the book was a KFX...
+if [ "${last_read_mime}" == "application/x-kfx-ebook" ] ; then
+	# We usually want the metadata sidecar file, not the book itself...
+	last_read_kfx="${last_read_file%.*}.sdr/assets/metadata.kfx"
+	# Check that it exists...
+	if [ ! -f "${last_read_kfx}" ] ; then
+		# NOTE: In theory, we should abort right here, as we actually used to do.
+		#       In practice, according to https://www.mobileread.com/forums/showpost.php?p=3546565&postcount=2543,
+		#       since Calibre's KFX Output plugin does not generate a sidecar file, but puts everything in the main file,
+		#       we'll try simply feeding *that* to KFX Meta.
+		kh_msg "couldn't open metadata sidecar of last read kfx book '${last_read_file}', assuming it was generated by Calibre..." W q
+		last_read_kfx="${last_read_file}"
+	fi
+	# Use KFX Meta.
+	# NOTE: See http://www.mobileread.com/forums/showpost.php?p=3261216&postcount=1879 and the posts around it for the rationale behind giving
+	#	up and just enforcing PYTHONIOENCODING...
+	#	If it ever comes back to bite us on the ass again, a cheap workaround would be to simply kill that barely useful print w/ the infile in it...
+	env PYTHONIOENCODING="utf-8" ${PYTHON} ${LINKSS_BINDIR}/kfxmeta.py -c "${last_read_kfx}" "${LINKSS_TMPFS_CACHE}/"
+else
+	# Use Kindle Unpack
+	${PYTHON} ${LINKSS_BINDIR}/kindleunpack.py "${last_read_file}" "${LINKSS_TMPFS_CACHE}/"
+fi
+
+# Check if it was successful...
+if [ $? -ne 0 ] ; then
+    kh_msg "couldn't extract cover for '${last_read_file}', aborting..." W q
+    # Clear cache folder, just in case KindleUnpack or KFX Meta left something behind...
+    for tmp_raw_cover in ${LINKSS_TMPFS_CACHE}/* ; do
+        [ -f "${tmp_raw_cover}" ] && rm -rf "${tmp_raw_cover}"
+    done
+    return 1
+fi
+
+# Then try to convert it for our device...
+for file in ${LINKSS_TMPFS_CACHE}/cover_raw_*.* ; do
+    if [ -f "${file}" ] ; then
+        # Check key against SQL query result...
+        file_key="${file##*cover_raw_}"
+        file_key="${file_key%.*}"
+
+        if [ "${last_read_key}" != "${file_key}" ] ; then
+            kh_msg "key mismatch (SQL: ${last_read_key} File: ${file_key})" W q
+        fi
+
+        # Setup a few things... (letterbox color, and personal info...)
+        if [ -f "${LINKSS_BASEDIR}/black" ] ; then
+            # We want black borders!
+            lb_bg_color="black"
+        else
+            lb_bg_color="white"
+        fi
+
+        # Build a personal info banner, adapted to our current screen.
+        if [ -f "${LINKSS_BASEDIR}/pinfo" ] ; then
+            # Check if we don't already have one cached, it takes a shitload of time to generate.
+            if [ ! -f "${LINKSS_BASEDIR}/cover_cache/pinfo.png" ] ; then
+                kh_msg "generating personal info banner . . ." I q
+                # Thanks to dsmid for the utf-8 & custom header improvements ;).
+                if [ -x /usr/bin/uconv ] ; then
+                    UCONV="uconv -x Hex/Java-Any -f iso-8859-1 -t utf-8"
+                else
+                    UCONV="cat"
+                fi
+                # If we have a custom header, use it.
+                if [ -f "${LINKSS_BASEDIR}/pinfo_header" ] ; then
+                    pinfo_header=$(cat "${LINKSS_BASEDIR}/pinfo_header")
+                else
+                    pinfo_header="If found, please contact:"
+                fi
+                # Extract the info from the settings (convert linefeeds to semicolons to avoid ending up with an unreadable mess for LF heavy strings. Remember that 60px is *small*! ImageMagick takes care of wordwrapping for us.)
+                pinfo_msg="${pinfo_header} $(grep PERSONAL_INFO /var/local/java/prefs/com.lab126.booklet.settings.preferences | cut -d= -f2 | sed 's/\\n/; /g' | ${UCONV})"
+                # Make it < ~7.5% tall, depending on our device
+                if [ "${IS_KOA2}" == "true" -o "${IS_KOA3}" == "true" ] ; then
+                    pinfo_size="1264x126"
+                elif [ "${IS_KV}" == "true" -o "${IS_PW3}" == "true" -o "${IS_KOA}" == "true" -o "${IS_PW4}" == "true" ] ; then
+                    pinfo_size="1072x108"
+                elif [ "${IS_PW}" == "true" ] ; then
+                    pinfo_size="758x76"
+                else
+                    pinfo_size="600x60"
+                fi
+                ${LINKSS_BINDIR}/convert -background "#000A" -fill white -font "/usr/java/lib/fonts/Caecilia_LT_75_Bold.ttf" -gravity center -size "${pinfo_size}" caption:"${pinfo_msg}" -limit time 90 -quality 75 "${LINKSS_BASEDIR}/cover_cache/pinfo.png"
+                # FWIW, this is a bit wobbly with GraphicsMagick, it doesn't really handle the layout for us...
+                #${LINKSS_BINDIR}/gm convert -size "${pinfo_size}" "xc:#000A" -fill white -font "/usr/java/lib/fonts/Caecilia_LT_75_Bold.ttf" -gravity center -pointsize 20 -draw 'text 0,0 "${pinfo_msg}"' -quality 75 "${LINKSS_BASEDIR}/cover_cache/pinfo.png"
+
+                # Check if it was successful...
+                if [ $? -ne 0 ] ; then
+                    kh_msg "couldn't create personal info banner, aborting..." W q
+                    # Don't leave a raw cover laying around...
+                    rm -f "${file}"
+                    return 1
+                fi
+            fi
+            # Prepare the extra args to compose it into our final image...
+            pinfo_args="-compose src-over -gravity south ${LINKSS_BASEDIR}/cover_cache/pinfo.png -composite"
+        else
+            # Nothing to do...
+            pinfo_args=""
+        fi
+
+        kh_msg "trying to convert ${file} . . ." I q
+        # NOTE: Dither down to the 16 colors the eips screen can show, via a custom colormap (built with IM from a screenshot taken on a book cover, via -unique-colors -scale 1000%).
+        # We force the PNG bitdepth to 8, because eips freaks on 16c PNG files otherwise.
+        # We could use a N8 quality, instead of the defaut N5 (75) because the zlib Z_RLE compression strategy is usually (much) faster, but it's not always the most efficient.
+        # Always use Lanczos (the 'tweaked' Sharp variant), even when upscaling because the default filter when upscaling, Mitchell, is blurrier. [We could also add a slight unsharp after the resize, like -unsharp 0x0.5]
+        # We're using -resize instead of -distort Resize because it's faster (yes, it might also generate less 'clean' images, but it's faster).
+
+        # Default to letterboxing, with correct AR
+        cover_resize_mode="letterbox"
+        # Autocrop (centered)
+        if [ -f "${LINKSS_BASEDIR}/autocrop" ] ; then
+            cover_resize_mode="autocrop"
+        fi
+        # Stretch
+        if [ -f "${LINKSS_BASEDIR}/stretch" ] ; then
+            cover_resize_mode="stretch"
+        fi
+
+        # Allow skipping the dithering step, because it requires a good chunk of memory, and this can be too much under certain circumstances, which can lead to swapping for a good long while (or making the framework restart ;)). If it takes more time than usual to build a cover (because kswapd0 is looping @ 100% CPU), or the framework restarts, try to enable this.
+        if [ -f "${LINKSS_BASEDIR}/lowmem" ] ; then
+            dither_args=""
+        else
+            if [ -f "${LINKSS_BASEDIR}/riemersma" ] ; then
+                dither_algo="Riemersma"
+            else
+                dither_algo="FloydSteinberg"
+            fi
+            # Die in a fire after 60s, to avoid looping like crazy if we're OOM.
+            dither_args="-limit time 60 -dither ${dither_algo} -remap ${LINKSS_BASEDIR}/etc/kindle_colors.gif"
+        fi
+
+        # Make eips happy (it chokes on plain 16c images, it expects a true PNG8 [256c], *with* a 256c colormap)
+        png8_args="-define png:color-type=0 -define png:bit-depth=8"
+        # NOTE: Keep track of the 'skip palette building for Grayscale images' issue (http://www.imagemagick.org/discourse-server/viewtopic.php?f=3&t=27580), because it screws with our workflow in a weird way:
+        #         On 'affected' versions (6.9.1-3 & 6.9.1-4), we don't get a colormap, which screws with eips, and we end up with a TrueColor image, which, besides not being *at all* what we asked for, is larger and takes longer to build,
+        #           and if we specifically ask for -define png:color-type=0, it breaks shit in fun and interesting ways (producing a bitonal image instead of a Grayscale one).
+        #         Note that there seems to be some kind of interaction with our specific workflow, because doing the same thing on a simple convert leads to different, slightly less puzzling, results...
+        #         The nuclear option, -type Grayscale -depth 8 -colors 256 -define png:bit-depth=8, behaves in roughly the same way.
+        # NOTE: If we can't make eips happy, just go with -define png:color-type=3 -define png:bit-depth=4 (16c indexed), at least that'd save some space...
+        # NOTE: Strangely enough, -define png:format=png8, which, in theory, should also do what we (eips, actually) want, ends up building indexed (color-type=3) 8bpp 16c PNGs, *with* a colormap, but without expanding to 256c as supposed...
+
+        # Follow the resize mode the user prefers (stretch, autocrop, or letterbox)
+        case "${cover_resize_mode}" in
+            "stretch" )
+                ${LINKSS_BINDIR}/convert "${file}" -filter LanczosSharp -resize "${MY_SCREEN_SIZE}!" ${pinfo_args} -colorspace Gray ${dither_args} -quality 75 ${png8_args} "${LINKSS_BASEDIR}/cover_cache/cover_${file_key}.png"
+            ;;
+            "autocrop" )
+                ${LINKSS_BINDIR}/convert "${file}" -filter LanczosSharp -resize "${MY_SCREEN_SIZE}^" -gravity center -extent "${MY_SCREEN_SIZE}!" ${pinfo_args} -colorspace Gray ${dither_args} -quality 75 ${png8_args} "${LINKSS_BASEDIR}/cover_cache/cover_${file_key}.png"
+                # NOTE: -resize 1516x -resize 'x2048<' -resize 50% -gravity center -crop 758x1024+0+0 +repage works too, but is ugly as hell and more annoying to implement here ;).
+            ;;
+            * )
+                ${LINKSS_BINDIR}/convert "${file}" -filter LanczosSharp -resize "${MY_SCREEN_SIZE}" -background ${lb_bg_color} -gravity center -extent "${MY_SCREEN_SIZE}!" ${pinfo_args} -colorspace Gray ${dither_args} -quality 75 ${png8_args} "${LINKSS_BASEDIR}/cover_cache/cover_${file_key}.png"
+                # On the off chance that you'd like to use GraphicsMagick:
+                # (It is indeed a tiiiiiny bit faster, doesn't appear to need a patch to the quantize step, but isn't as powerful, cf. the note on captions earlier)
+                #${LINKSS_BINDIR}/gm convert "${file}" -filter Lanczos -resize "${MY_SCREEN_SIZE}" -background ${lb_bg_color} -gravity center -extent "${MY_SCREEN_SIZE}" ${pinfo_args} -colorspace Rec709Luma ${dither_args} -quality 75 ${png8_args} "${LINKSS_BASEDIR}/cover_cache/cover_${file_key}.png"
+                # Where dither_args is (no time limit support, only a single dithering algo, and the remap switch is different):
+                #dither_args="-dither -map ${LINKSS_BASEDIR}/etc/kindle_colors.gif"
+            ;;
+        esac
+
+        conv_ret="$?"
+
+        # Remove the raw cover now that we're done
+        rm -f "${file}"
+
+        # Check if it was successful...
+        if [ ${conv_ret} -ne 0 ] ; then
+            kh_msg "couldn't convert cover for ${file_key}, aborting..." W q
+            return 1
+        else
+            # Stupid extra safety check...
+            if [ -f "${LINKSS_BASEDIR}/cover_cache/cover_${file_key}.png" ] ; then
+                # Good! Set it up!
+                kh_msg "using ${file_key} cover as active screensaver" I q
+                # Symlink from base-us...
+                ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/cover_${file_key}.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+                # This feels dumb, but who knows... Flush FS buffers.
+                sync
+            else
+                kh_msg "couldn't find processed cover for ${file_key}, aborting..." W q
+                return 1
+            fi
+        fi
+    fi
+done
+
+return 0

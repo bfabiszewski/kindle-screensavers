@@ -1,0 +1,54 @@
+LICENSE
+
+  Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted, provided
+that the above copyright notice appears in all copies and that both the
+copyright notice and this permission notice appear in supporting
+documentation, and that the same name not be used in advertising or
+publicity pertaining to distribution of the software without specific,
+written prior permission. We make no representations about the
+suitability this software for any purpose. It is provided "as is"
+without express or implied warranty.
+
+CREDITS
+
+  xzdec: XZ Utils,
+Released under the public domain.
+(http://tukaani.org/xz/)
+
+  sort: coreutils, Copyright (C) 1988, 1991-2011 Free Software Foundation, Inc.,
+licensed under the GNU General Public License (http://www.gnu.org/licenses/gpl.html).
+(http://www.gnu.org/software/coreutils)
+
+  shlock: shlock.c, Copyright (c) 2005 The DragonFly Project,
+licensed under the DragonFly BSD License (http://www.dragonflybsd.org/docs/developer/DragonFly_BSD_License/).
+(http://gitweb.dragonflybsd.org/dragonfly.git/blob/HEAD:/usr.bin/shlock/shlock.c)
+
+  convert, identify, mogrify: ImageMagick, Copyright (C) 1999-2011 ImageMagick Studio LLC,
+licensed under the Apache 2.0 license (http://www.imagemagick.org/script/license.php)
+(http://www.imagemagick.org/script/index.php)
+
+    |->   libpng, Copyright (c) 2004, 2006-2012 Glenn Randers-Pehrson,
+    |   Licensed under the libpng license (http://www.libpng.org/pub/png/src/libpng-LICENSE.txt)
+    |   (http://www.libpng.org/pub/png/libpng.html)
+    |
+    |->   zlib, Copyright (C) 1995-2013 Jean-loup Gailly and Mark Adler,
+    |   Licensed under the zlib license (http://zlib.net/zlib_license.html)
+    |   (http://zlib.net/)
+    |
+    `->   libjpeg-turbo, Copyright (C) 1991-2010, Thomas G. Lane, Guido Vollbeding.,
+        Licensed under a BSD-style license (http://sourceforge.net/p/libjpeg-turbo/code/HEAD/tree/trunk/README).
+        (http://libjpeg-turbo.virtualgl.org/)
+
+  inotifywait: inotify-tools, Copyright (C) 2006-2012 Rohan McGovern,
+licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+(https://github.com/rvoicilas/inotify-tools)
+
+  libfreetype.so: FreeType, Copyright 1996-2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 by David Turner, Robert Wilhelm, and Werner Lemberg,
+Licensed under the FreeType License (http://freetype.org/FTL.TXT). (http://freetype.org)
+
+  libharfbuzz.so: HarfBuzz, Copyright © 2010,2011,2012  Google, Inc., Copyright © 2012  Mozilla Foundation, Copyright © 2011  Codethink Limited, Copyright © 2008,2010  Nokia Corporation and/or its subsidiary(-ies),
+    Copyright © 2009  Keith Stribley, Copyright © 2009  Martin Hosken and SIL International, Copyright © 2007  Chris Wilson, Copyright © 2006  Behdad Esfahbod, Copyright © 2005  David Turner,
+    Copyright © 2004,2007,2008,2009,2010  Red Hat, Inc., Copyright © 1998-2004  David Turner and Werner Lemberg,
+Licensed in part under the "Old MIT" license (http://cgit.freedesktop.org/harfbuzz/tree/COPYING)
+(http://www.freedesktop.org/wiki/Software/HarfBuzz/)

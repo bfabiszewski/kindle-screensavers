@@ -1,0 +1,522 @@
+2019-07-23 22:01  NiLuJe
+
+	* [r16255] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * KOA3 handling in KUAL menus
+
+2019-07-23 21:58  NiLuJe
+
+	* [r16254] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * More KOA3 handling
+
+2019-06-04 01:50  NiLuJe
+
+	* [r15988] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Missed a few spots where the KT4 wasn't being detected
+
+2018-11-08 21:49  NiLuJe
+
+	* [r15509] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Plug in PW4 detection in KUAL extensions
+
+2018-11-08 21:42  NiLuJe
+
+	* [r15508] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * Plug PW4 detection in...
+
+2017-11-24 22:21  NiLuJe
+
+	* [r14380] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Another pass of KOA2 stuff...
+
+2016-08-01 14:13  NiLuJe
+
+	* [r13410] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Add a button to process images in the staging directory.
+	  Making sure the framework won't choke on them.
+	  Basically duplicates the relevant code from cover mode...
+	  Should hopefully help people deal with crappily encoded images...
+
+2016-07-08 21:13  NiLuJe
+
+	* [r13339] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Some more stuff missing for KOA/KT3 support...
+
+2016-02-21 16:26  NiLuJe
+
+	* [r12965] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Trim the cover mode switch message a bit so it doesn't get split in
+	  multiple lines on most devices
+
+2016-02-07 03:04  NiLuJe
+
+	* [r12846] linkss/bin/linkss.sh:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * When doing a framework restart via KUAL, don't call shuffless
+	  ourselves on FW 5.x.
+	  We don't need to, because unlike the autoreboot watchdog, we do a stop
+	  & start, so
+	  linkss itself will do it for us.
+	  Plus, we did it *before* stopping the framework, which could
+	  potentially confuse
+	  the framework and break stuff.
+
+2016-01-15 00:11  NiLuJe
+
+	* [r12776] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Remind users that switching to cover mode requires a framework
+	  restart when enabling it through KUAL
+
+2015-09-27 10:53  NiLuJe
+
+	* [r12472] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Forgot to update the custom_screensaver handling in a while.
+	  I may have just broken its detection completely, who knows...
+
+2015-09-10 17:03  NiLuJe
+
+	* [r12383] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSaver:
+	  * Grammar police!
+
+2015-08-18 20:14  NiLuJe
+
+	* [r12247] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Fix some K5 device checks to handle the KV/KT2/PW3 in various KUAL
+	  menus
+
+2015-02-17 18:57  NiLuJe
+
+	* [r11526] linkss/bin/linkss.sh:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix the "framework restart" button.
+	  Do a stop && start instead of a restart, so that our stop on/start on
+	  stanzas are honored.
+	  With a simple restart, linkss wasn't going down & up, which made it
+	  mostly useless as a means
+	  to take new settings into account.
+
+2014-11-23 20:44  NiLuJe
+
+	* [r11150] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * Oooh, I can't spell ;).
+
+2014-11-22 16:23  NiLuJe
+
+	* [r11129] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * Use a more reliable method to check the current UID,
+	  the env cannot be trusted.
+
+2014-11-22 15:30  NiLuJe
+
+	* [r11127] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * More safety nets around the FW 5.6.1 mess...
+
+2014-11-17 18:12  NiLuJe
+
+	* [r11112] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * Tweak some broken eips calls (invalid chars)
+
+2014-11-07 18:54  NiLuJe
+
+	* [r11043] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * Second pass of Kindle Voyage support...
+
+2014-05-31 00:41  NiLuJe
+
+	* [r10571] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Shorten some possibly too long KUAL status messages...
+
+2014-02-14 17:44  NiLuJe
+
+	* [r10330] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Optionally handle periodicals in cover mode
+
+2014-01-09 21:45  NiLuJe
+
+	* [r10299] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Add a "complete uninstall" button to the KUAL extensions.
+	  Makes the uninstallers remove the hack directory from the userstore.
+
+2013-11-17 16:08  NiLuJe
+
+	* [r10101] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Add a KUAL button to show the exact version of the package
+	  installed.
+	  It helps with my rolling releases snapshots, for example ;).
+
+2013-10-05 13:11  NiLuJe
+
+	* [r9914] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * KUAL extensions:
+	  * Detect the PW2
+
+2013-09-19 20:17  NiLuJe
+
+	* [r9832] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Sleep a bit more to account for cold screens
+
+2013-09-19 19:23  NiLuJe
+
+	* [r9831] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Fix eips calls for the cover preview on legacy devices
+
+2013-09-19 18:50  NiLuJe
+
+	* [r9830] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Do our best to get rid of any ghosting when previewing the active
+	  cover
+
+2013-09-19 18:41  NiLuJe
+
+	* [r9829] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Less regexy awk call to check for freespace
+
+2013-09-19 18:37  NiLuJe
+
+	* [r9828] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Fix the cover preview...
+
+2013-09-19 18:25  NiLuJe
+
+	* [r9827] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Add a KUAL button to preview the current active screensaver in cover
+	  mode
+
+2013-08-13 19:31  NiLuJe
+
+	* [r9727] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * Tweak some comments
+
+2013-08-12 18:24  NiLuJe
+
+	* [r9714] linkss/bin/linkss.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Fix our traps in the KUAL restart X/framework buttons to avoid
+	  messing with upstart...
+
+2013-08-02 23:36  NiLuJe
+
+	* [r9651] linkss/bin/linkss.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Properly increment the progress bar when triggering a framework
+	  restart through KUAL
+
+2013-08-02 21:23  NiLuJe
+
+	* [r9650] linkss/bin/linkss.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Apparently, we need to handle the progress bar ourselves...
+
+2013-08-02 21:03  NiLuJe
+
+	* [r9647] linkss/bin/linkss.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Show the progress bar splash screen when we trigger a framework
+	  restart
+
+2013-07-31 14:35  NiLuJe
+
+	* [r9620] linkss/menu.json:
+	  
+	  Kindle Touch Hacks:
+	  * Reflect the new K5 autoreboot default in the menu & docs
+
+2013-07-31 14:22  NiLuJe
+
+	* [r9618] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Add a framework restart button to the Fonts & SS KUAL menus
+
+2013-07-16 16:00  NiLuJe
+
+	* [r9509] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Honor the verbose flag in the KUAL scripts, now that the custom
+	  status print works
+	  in the latest KUAL snapshots.
+
+2013-07-14 16:09  NiLuJe
+
+	* [r9504] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Make the dithering algorithm configurable
+
+2013-07-14 00:38  NiLuJe
+
+	* [r9494] linkss/bin/linkss.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Tweak a KUAL print
+
+2013-07-14 00:11  NiLuJe
+
+	* [r9492] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Make dithering configurable (via the lowmem switch) because it eats
+	  a fuckload of RAM, to the point of swapping on some devices.
+
+2013-07-12 21:40  NiLuJe
+
+	* [r9482] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Properly handle the KindleDX w/ latest KUAL snapshots
+
+2013-07-05 01:25  NiLuJe
+
+	* [r9438] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kinde Touch Hacks:
+	  * ScreenSavers:
+	  * Experimental beta button added to the KUAL menu
+
+2013-07-02 20:19  NiLuJe
+
+	* [r9417] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * KUAL: use checked: true w/ refresh: false
+
+2013-07-02 01:50  NiLuJe
+
+	* [r9395] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Minor tweaks to the KUAL menu for K5 devices
+
+2013-07-01 20:28  NiLuJe
+
+	* [r9384] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * KUAL: Fix -m tests (I still suck at RPN ;D)
+
+2013-07-01 20:14  NiLuJe
+
+	* [r9383] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * Switch to usig -m in KUAL extensions
+
+2013-07-01 18:55  NiLuJe
+
+	* [r9382] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * KUAL: Oops, had forgotten about the shuffle mode... ;)
+
+2013-07-01 18:50  NiLuJe
+
+	* [r9381] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Make the sleep workaround for the potentially iffy first sleep cycle
+	  after a book switch configurable
+
+2013-07-01 01:49  NiLuJe
+
+	* [r9376] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Kill the process_staging stub, it's not our job (and the legacy hack
+	  doesn't have a staging folder anyway)
+
+2013-06-29 00:21  NiLuJe
+
+	* [r9364] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Refresh menu on behavor reset
+
+2013-06-29 00:18  NiLuJe
+
+	* [r9363] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Nearly done with the KUAL extension!
+
+2013-06-29 00:05  NiLuJe
+
+	* [r9362] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * KUAL: Use a different regex for the -m workaround. Potentially less
+	  hairy ;D
+
+2013-06-29 00:02  NiLuJe
+
+	* [r9361] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * More KUAL stuff done
+
+2013-06-28 23:43  NiLuJe
+
+	* [r9360] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * KUAL: Hmm, shiny regex workaround ;D
+
+2013-06-28 23:19  NiLuJe
+
+	* [r9359] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Don't show the cover mode settings submenu if we're not in cover
+	  mode
+
+2013-06-28 23:07  NiLuJe
+
+	* [r9358] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * RPN strikes again! RPN: 2, NiLuJe: 1 :D
+
+2013-06-28 22:57  NiLuJe
+
+	* [r9357] linkss/bin/linkss.sh, linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * KUAL: Only show the autoreboot trigger menu if autoreboot is enabled
+
+2013-06-28 03:43  NiLuJe
+
+	* [r9355] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Add a tool entry to reset to default settings
+
+2013-06-28 03:42  NiLuJe
+
+	* [r9354] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Only show the border settings if we're in letterbox mode
+
+2013-06-28 03:13  NiLuJe
+
+	* [r9353] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * KUAL extensions: Fix a bunch of issues (namely, I suck at RPN, and
+	  the -m operator isn't implemented)
+
+2013-06-28 02:18  NiLuJe
+
+	* [r9352] linkss/menu.json:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * More KUAl FIXMEs
+
+2013-06-28 02:16  NiLuJe
+
+	* [r9351] .[ADD], linkss[ADD], linkss/bin[ADD],
+	  linkss/bin/linkss.sh[ADD], linkss/config.xml[ADD],
+	  linkss/menu.json[ADD]:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Initial import of the skeleton of the KUAl extension
+

@@ -1,0 +1,253 @@
+#!/bin/sh
+#
+# $Id: shuffless 16254 2019-07-23 21:58:00Z NiLuJe $
+#
+
+# Get hackname from the script's path (NOTE: Will only work for scripts called from /mnt/us/${KH_HACKNAME}/bin)
+KH_HACKNAME="${0##/mnt/us/}"
+KH_HACKNAME="${KH_HACKNAME%%/bin/*}"
+
+# Try to pull our custom helper lib
+_KH_FUNCS="/mnt/us/${KH_HACKNAME}/bin/libkh5"
+if [ -f ${_KH_FUNCS} ] ; then
+    . ${_KH_FUNCS}
+else
+    # Pull default helper functions for logging
+    _FUNCTIONS=/etc/upstart/functions
+    [ -f ${_FUNCTIONS} ] && . ${_FUNCTIONS}
+    # We couldn't get our custom lib, abort
+    f_log W linkss script "" "couldn't source libkh5 from '${KH_HACKNAME}'"
+    exit 0
+fi
+
+# Are we doing a bootup shuffle, or an auto restart shuffle?
+if [ "$1" == "watchdog" ] ; then
+    trigger_file="shuffle"
+    watchdog_triggered="true"
+else
+    trigger_file="random"
+    watchdog_triggered="false"
+fi
+
+# Use the right prefix for our model...
+# NOTE: The KT2 & KV both did away with the size hint... So did FW 5.6 on the PW2, so ties this to the FW version first...
+if [ "${K5_ATLEAST_55}" == "true" ] ; then
+    ss_prefix="bg_ss"
+elif [ "${IS_PW}" == "true" ] ; then
+    ss_prefix="bg_medium_ss"
+else
+    ss_prefix="bg_xsmall_ss"
+fi
+
+# Make sure our various folders exist ;)
+for ss_folder in screensavers staging discarded overflow cover_cache ; do
+    [ -d "${LINKSS_BASEDIR}/${ss_folder}" ] || mkdir -p "${LINKSS_BASEDIR}/${ss_folder}"
+done
+
+# If we're in cover mode, we're doing our stuff from a tmpfs, so, KISS :)
+if [ -f ${LINKSS_BASEDIR}/cover -o -f ${LINKSS_BASEDIR}/last ] ; then
+    # If the watchdog triggered us, there's usually no reason to do anything extra, so just go away now ;)
+    if [ "${watchdog_triggered}" == "true" ] ; then
+        kh_msg "nothing to do :)" I q
+        return 0
+    fi
+
+    # Another overkill sanity check...
+    if [ ! -d ${LINKSS_TMPFS_COVERDIR} ] ; then
+        kh_die "couldn't find the cover directory, aborting" a "no cover directory, aborting"
+    fi
+
+    # First thing to do is to clear the target folder, we're always working with a single file in these modes.
+    # Given the fact that we run at boot, and this is a tmpfs, this should be dead/useless code...
+    for file in ${LINKSS_TMPFS_COVERDIR}/* ; do
+        [ -f "${file}" ] && rm -f "${file}"
+    done
+
+    # Make sure our current cover is sane
+    if [ -f ${LINKSS_BASEDIR}/cover ] ; then
+        kh_msg "cover mode setup..." I v
+
+        # Try to restore the cover from the last book opened (mostly verbatim from cover-extract).
+        if [ -f "${LINKSS_BASEDIR}/etc/last_read" ] ; then
+            last_read_key="$(cat "${LINKSS_BASEDIR}/etc/last_read")"
+        else
+            last_read_key=""
+        fi
+
+        # Check if we already have the file in cache...
+        if [ -f "${LINKSS_BASEDIR}/cover_cache/cover_${last_read_key}.png" ] ; then
+            kh_msg "cache hit for ${last_read_key} :)" I q
+            # NOTE: We symlink from base-us to avoid a layer of fuse, and since we don't actually write to the userstore, we *should* be safe. That might be a horrible mistake, though ;)
+            ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/cover_${last_read_key}.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+        else
+            # We'll have to make do with the fallback...
+            if [ "${IS_KOA2}" == "true" -o "${IS_KOA3}" == "true" ] ; then
+                ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/default-koa2.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+            elif [ "${IS_KV}" == "true" -o "${IS_PW3}" == "true" -o "${IS_KOA}" == "true" -o "${IS_PW4}" == "true" ] ; then
+                ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/default-kv.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+            elif [ "${IS_PW}" == "true" ] ; then
+                ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/default-pw.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+            else
+                ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/default.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+            fi
+        fi
+    fi
+
+    # Same concept, but for the last mode
+    if [ -f ${LINKSS_BASEDIR}/last ] ; then
+        kh_msg "last mode setup..." I v
+
+        # Just reset the symlink ;)
+        if [ "${IS_KOA2}" == "true" -o "${IS_KOA3}" == "true" ] ; then
+            ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/overlay-koa2.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+        elif [ "${IS_KV}" == "true" -o "${IS_PW3}" == "true" -o "${IS_KOA}" == "true" -o "${IS_PW4}" == "true" ] ; then
+            ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/overlay-kv.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+        elif [ "${IS_PW}" == "true" ] ; then
+            ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/overlay-pw.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+        else
+            ln -sf "${LINKSS_BASEDIR_BASE}/cover_cache/overlay.png" "${LINKSS_TMPFS_COVERDIR}/${ss_prefix}00.png"
+        fi
+    fi
+
+    # We don't need/want to spend some time uselessly doing the cleanup of the userstore stuff, so exit now ;)
+    return 0
+fi
+
+
+# Check that the staging directory is empty before we start putting stuff in it
+if [ "x$( ls -A ${LINKSS_BASEDIR}/staging 2> /dev/null )" != x ] ; then
+    kh_msg "staging directory isn't empty, moving content to overflow..." W q
+    for file in ${LINKSS_BASEDIR}/staging/* ; do
+        # Use the md5sum of the file directly to avoid nameclashes
+        [ -f "${file}" ] && mv -f "${file}" "${LINKSS_BASEDIR}/overflow/$(md5sum ${file} | awk '{ print $1; }').png"
+    done
+fi
+
+# Loop through all our custom screensavers, and rename them in order (order that's optionally random, courtesy of coreutils' sort),
+# with a fixed-length zero-padded index as a prefix, ie. ${id}_my_super_image.png instead of my_super_image.png
+IFS_BKP="${IFS}"
+# We use an invalid character for FAT32 filenames to avoid any problem, because the Kindles crappy shell doesn't like NULL as an IFS...
+IFS=':'
+# NOTE: There's some fairly ugly IFS trickery involved in order to work with filenames containing spaces, because we can't rely on the proper
+# methods available to fix this in a real shell...
+
+# We can optionally shuffle the order, but we'll at least make sure everything follows the naming scheme the framework expects...
+if [ -f ${LINKSS_BASEDIR}/${trigger_file} ] ; then
+    # With visible feedback if we were triggered by the watchdog, since it may take some time...
+    if [ "${watchdog_triggered}" == "true" ] ; then
+        kh_msg "shuffling screensavers..." I v
+    else
+        kh_msg "randomizing screensavers..." I v
+    fi
+
+    # Randomly sort our screensavers
+    [ -x ${LINKSS_BASEDIR}/bin/sort ] || chmod +x ${LINKSS_BASEDIR}/bin/sort
+    ss_list="$( find ${LINKSS_BASEDIR}/screensavers ${LINKSS_BASEDIR}/overflow -type f -print0 | ${LINKSS_BASEDIR}/bin/sort -R -z | tr '\0' ':' )"
+else
+    kh_msg "checking screensavers..." I v
+
+    # Sort in order, to avoid useless shuffling when we don't want to change the order...
+    [ -x ${LINKSS_BASEDIR}/bin/sort ] || chmod +x ${LINKSS_BASEDIR}/bin/sort
+    ss_list="$( find ${LINKSS_BASEDIR}/screensavers -type f -print0 | ${LINKSS_BASEDIR}/bin/sort -g -z | tr '\0' ':' )"
+fi
+
+sort_index=0
+for ss_file in ${ss_list} ; do
+    # Get the name of the directory the file lives in...
+    ss_fulldir="${ss_file%/*}"
+    ss_dir="${ss_fulldir##*/}"
+
+    # Also get the basename of our file
+    ss_filename="${ss_file##*/}"
+
+    # Not a file? NEEEEXT!
+    if [ ! -f "${ss_file}" ] ; then
+        mv -f "${ss_file}" "${LINKSS_BASEDIR}/discarded/"
+        continue
+    fi
+
+    # Not a (lowercase) PNG? NEEXT!
+    if [ "${ss_file##*.}" != "png" ] ; then
+        mv -f "${ss_file}" "${LINKSS_BASEDIR}/discarded/"
+        continue
+    fi
+
+    # Over 100? NEEEXT!
+    if [ ${sort_index} -ge 100 ] ; then
+        # Don't do anything if the file is already in overflow ;)
+        if [ "${ss_dir}" != "overflow" ] ; then
+            # Avoid a nameclash... If there's a clash, switch the filename to the md5sum of the file to make sure it'll be nearly unique
+            if [ -f "overflow/${ss_filename}" ] ; then
+                mv -f "${ss_file}" "${LINKSS_BASEDIR}/overflow/$(md5sum ${ss_file} | awk '{ print $1; }').png"
+            else
+                mv -f "${ss_file}" "${LINKSS_BASEDIR}/overflow/"
+            fi
+        fi
+        continue
+    fi
+
+    # Handle the zero-padding of our index, to make sure it's always the same length (2 chars) to make the framework (and non natural order sorting algorithms) happy.
+    ss_new_idx="${sort_index}"
+    while [ ${#ss_new_idx} -lt 2 ] ; do
+        ss_new_idx="0${ss_new_idx}"
+    done
+
+    # And rename our files (use a staging directory to avoid losing files to name clashes...)
+    mv -f "${ss_file}" "${LINKSS_BASEDIR}/staging/${ss_prefix}${ss_new_idx}.png"
+
+    # Increment our index
+    sort_index=$(( sort_index + 1 ))
+done
+# Restore IFS
+IFS="${IFS_BKP}"
+
+# Shout if the target directory isn't empty...
+if [ "x$( ls -A ${LINKSS_BASEDIR}/screensavers 2> /dev/null )" != x ] ; then
+    kh_msg "target directory isn't empty, moving content to overflow..." W q
+    for file in ${LINKSS_BASEDIR}/screensavers/* ; do
+        # Use the md5sum of the file directly to avoid nameclashes
+        [ -f "${file}" ] && mv -f "${file}" "${LINKSS_BASEDIR}/overflow/$(md5sum ${file} | awk '{ print $1; }').png"
+    done
+fi
+
+# To avoid doing a mass mv, we're just going to rename the folder itself...
+# However, touching the screensavers folder *will* break the bind mount, so, if we've been called by the watchdog, unmount it first...
+# To be completely safe, do a proper check, don't just assume watchdog == mounted ;).
+if grep -q "^fsp /usr/share/blanket/screensaver" /proc/mounts ; then
+    # Unmount it, forcefully
+    umount /usr/share/blanket/screensaver
+
+    # Handle the custom one too...
+    if grep -q "^fsp /var/local/custom_screensavers" /proc/mounts ; then
+        umount /var/local/custom_screensavers
+    fi
+
+    # And do our stuff ;)
+    rm -rf "${LINKSS_BASEDIR}/screensavers"
+    mv -f "${LINKSS_BASEDIR}/staging" "${LINKSS_BASEDIR}/screensavers"
+
+    # Then, restore the bind mount :)
+    mount --bind ${LINKSS_BASEDIR}/screensavers /usr/share/blanket/screensaver
+
+    # Handle the custom one, too...
+    if [ -f ${LINKSS_BASEDIR}/beta ] ; then
+        mount --bind ${LINKSS_BASEDIR}/screensavers /var/local/custom_screensavers
+    fi
+else
+    # Not mounted, we can safely move staging to screensavers ;).
+    # For that, we need to delete screensavers first (because busybox's mv is somewhat limited).
+    rm -rf "${LINKSS_BASEDIR}/screensavers"
+
+    # And we can move it!
+    mv -f "${LINKSS_BASEDIR}/staging" "${LINKSS_BASEDIR}/screensavers"
+fi
+
+kh_msg "end of screensavers parsing" I q
+
+# Do a final empty check...
+if [ "x$( ls -A ${LINKSS_BASEDIR}/screensavers 2> /dev/null )" == x ] ; then
+    kh_msg "screensavers directory is empty, aborting..." W q
+    return 1
+fi
+
+return 0

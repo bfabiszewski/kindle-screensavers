@@ -1,0 +1,3938 @@
+2020-06-13 20:55  NiLuJe
+
+	* [r17508] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2020-06-05 00:39  NiLuJe
+
+	* [r17466] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2020-06-02 01:48  NiLuJe
+
+	* [r17441] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2020-05-18 20:05  NiLuJe
+
+	* [r17349] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2020-05-13 02:19  NiLuJe
+
+	* [r17279] src/linkss/bin/convert, src/linkss/bin/identify,
+	  src/linkss/bin/mogrify, src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2020-05-01 21:37  NiLuJe
+
+	* [r17174] src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2020-04-06 04:25  NiLuJe
+
+	* [r17028] src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2020-03-10 15:28  NiLuJe
+
+	* [r16952] src/linkss/bin/convert, src/linkss/bin/identify,
+	  src/linkss/bin/inotifywait, src/linkss/bin/mogrify,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libpng16.so.16,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2020-02-11 03:08  NiLuJe
+
+	* [r16858] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (fix gdb)
+
+2020-02-10 16:58  NiLuJe
+
+	* [r16851] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2020-02-04 18:01  NiLuJe
+
+	* [r16835] src/linkss/bin/convert, src/linkss/bin/identify,
+	  src/linkss/bin/inotifywait, src/linkss/bin/mogrify,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libpng16.so.16,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-11-25 22:32  NiLuJe
+
+	* [r16737] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Update binaries
+
+2019-11-23 23:12  NiLuJe
+
+	* [r16715] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-11-14 15:43  NiLuJe
+
+	* [r16658] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-10-11 21:21  NiLuJe
+
+	* [r16572] src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-10-06 19:37  NiLuJe
+
+	* [r16535] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-10-01 02:33  NiLuJe
+
+	* [r16517] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-09-15 22:01  NiLuJe
+
+	* [r16474] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-09-02 11:12  NiLuJe
+
+	* [r16438] src/linkss/bin/convert, src/linkss/bin/identify,
+	  src/linkss/bin/inotifywait, src/linkss/bin/mogrify,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libpng16.so.16,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-08-14 18:50  NiLuJe
+
+	* [r16309] src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (complete bs4 support)
+
+2019-08-14 11:31  NiLuJe
+
+	* [r16306] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-07-30 22:02  NiLuJe
+
+	* [r16286] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-07-23 22:04  NiLuJe
+
+	* [r16256] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Prepare packaging for the KOA3.
+	  This is currently a NOP (and unusable, anyway, since we lack a JB).
+	  Hence the filenames not being updated.
+
+2019-07-23 21:58  NiLuJe
+
+	* [r16254] src/linkss/bin/cover-extract, src/linkss/bin/linkss,
+	  src/linkss/bin/shuffless:
+	  
+	  Kindle Hacks:
+	  * More KOA3 handling
+
+2019-07-23 21:44  NiLuJe
+
+	* [r16252] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the KOA3
+
+2019-07-20 15:56  NiLuJe
+
+	* [r16237] src/linkss/bin/identify, src/linkss/bin/mogrify,
+	  src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-07-12 02:33  NiLuJe
+
+	* [r16160] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Make sure we deref hardlinks when creating tarballs that might be
+	  unpacked on vfat...
+
+2019-07-12 01:38  NiLuJe
+
+	* [r16157] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Switch from hard copies to hard links for most move/copy operations
+	  in the packaging scripts.
+	  Should hopefully make rebuilding the snapshots a tiny bit faster with
+	  no adverse affects ;).
+
+2019-07-10 17:21  NiLuJe
+
+	* [r16139] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-07-07 03:50  NiLuJe
+
+	* [r16071] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-06-04 01:56  NiLuJe
+
+	* [r15989] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Update the filenames to reflect the fact that stuff is packaged for
+	  the KT4 now
+
+2019-06-04 01:50  NiLuJe
+
+	* [r15988] src/linkss/bin/linkss:
+	  
+	  Kindle Hacks:
+	  * Missed a few spots where the KT4 wasn't being detected
+
+2019-06-03 21:32  NiLuJe
+
+	* [r15987] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Actually package stuff for the KT4, whoops.
+
+2019-06-03 12:40  NiLuJe
+
+	* [r15983] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-06-01 13:18  NiLuJe
+
+	* [r15968] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Plug in a few new PW4 IDs...
+
+2019-04-30 14:17  NiLuJe
+
+	* [r15920] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-04-20 02:53  NiLuJe
+
+	* [r15898] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-04-12 03:14  NiLuJe
+
+	* [r15868] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the KT4
+
+2019-04-06 05:00  NiLuJe
+
+	* [r15860] src/linkss/bin/sort, src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libjpeg.so.62,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-03-10 18:16  NiLuJe
+
+	* [r15828] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-02-21 16:49  NiLuJe
+
+	* [r15788] src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libturbojpeg.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2019-02-01 23:32  NiLuJe
+
+	* [r15759] src/linkss/bin/convert, src/linkss/bin/identify,
+	  src/linkss/bin/inotifywait, src/linkss/bin/mogrify,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libMagickCore-6.Q8.so.6,
+	  src/linkss/lib/libMagickWand-6.Q8.so.6,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libjpeg.so.62, src/linkss/lib/libpng16.so.16,
+	  src/linkss/lib/libturbojpeg.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (TC update)
+
+2019-01-08 06:11  NiLuJe
+
+	* [r15715] README:
+	  
+	  Kindle Hacks:
+	  * We now ship identify & mogrify from IM, too.
+
+2019-01-03 04:43  NiLuJe
+
+	* [r15703] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Update packaging scripts for new libs/binaries
+
+2019-01-03 04:33  NiLuJe
+
+	* [r15702] src/linkss/lib/libMagickCore-6.Q8.so.6[ADD],
+	  src/linkss/lib/libMagickWand-6.Q8.so.6[ADD],
+	  src/linkss/lib/libjpeg.so.62[ADD],
+	  src/linkss/lib/libturbojpeg.so.0[ADD]:
+	  
+	  Kindle Hacks:
+	  * Import missing IM libaries
+	  * Move from OpenSSL 1.0.0 to 1.1.0
+
+2019-01-03 04:30  NiLuJe
+
+	* [r15701] src/linkss/bin/identify[ADD], src/linkss/bin/mogrify[ADD]:
+	  
+	  Kindle Hacks:
+	  * Add new IM binaries
+
+2019-01-03 04:29  NiLuJe
+
+	* [r15700] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-12-09 22:43  NiLuJe
+
+	* [r15585] src/linkss/bin/convert, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-12-09 04:37  NiLuJe
+
+	* [r15581] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Add potentially bogus new PW4 IDs...
+
+2018-11-22 05:26  NiLuJe
+
+	* [r15562] src/linkss/bin/convert, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-11-09 16:42  NiLuJe
+
+	* [r15529] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-11-08 22:15  NiLuJe
+
+	* [r15511] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Package stuff for the PW4
+
+2018-11-08 21:42  NiLuJe
+
+	* [r15508] src/linkss/bin/cover-extract, src/linkss/bin/linkss,
+	  src/linkss/bin/shuffless:
+	  
+	  Kindle Hacks:
+	  * Plug PW4 detection in...
+
+2018-11-08 21:24  NiLuJe
+
+	* [r15506] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the PW4
+
+2018-09-28 02:00  NiLuJe
+
+	* [r15470] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (better requests fix, and actually ship OpenSSH..
+	  ;D)
+
+2018-09-27 19:23  NiLuJe
+
+	* [r15463] src/linkss/bin/convert, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Unbreak requests)
+
+2018-09-10 02:10  NiLuJe
+
+	* [r15423] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/policy.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries... (the great gold to bfd switch...)
+
+2018-09-01 17:53  NiLuJe
+
+	* [r15377] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Oops, put FBInk binaries in the right place...
+
+2018-08-31 20:55  NiLuJe
+
+	* [r15369] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Install a minimal FBInk build w/ linkfonts & linkss
+
+2018-08-22 14:30  NiLuJe
+
+	* [r15338] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-07-25 00:05  NiLuJe
+
+	* [r15265] src/linkss/bin/convert, src/linkss/lib/libpng16.so.16,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-07-24 06:29  NiLuJe
+
+	* [r15253] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (unbreak dropbear)
+
+2018-07-23 16:11  NiLuJe
+
+	* [r15247] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-07-20 14:41  NiLuJe
+
+	* [r15235] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libpng16.so.16:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-07-11 23:22  NiLuJe
+
+	* [r15199] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Make very sure the canvas will be exactly of the requested size
+	  (i.e., ignore AR)
+
+2018-07-02 18:41  NiLuJe
+
+	* [r15128] src/linkss/bin/convert, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-06-21 15:00  NiLuJe
+
+	* [r15092] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Updated TC)
+
+2018-06-02 16:58  NiLuJe
+
+	* [r15011] build/build-updates.sh, src/linkss/bin/cover-watchdog-helper,
+	  src/linkss/bin/linkss, src/linkss/bin/shuffless,
+	  src/linkss/bin/unlinkss:
+	  
+	  Kindle Hacks:
+	  * Use grep -q instead of IO reidrections where applicable
+
+2018-06-01 17:30  NiLuJe
+
+	* [r14998] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Add packaging metadata to all OTAv2 packages that will *always* go
+	  through MRPI.
+
+2018-05-30 22:35  NiLuJe
+
+	* [r14989] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/etc/ImageMagick-6/type-dejavu.xml,
+	  src/linkss/etc/ImageMagick-6/type-ghostscript.xml,
+	  src/linkss/etc/ImageMagick-6/type.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2018-05-30 16:34  NiLuJe
+
+	* [r14983] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * USBNetwork:
+	  * Tag v0.22.N
+	  * ScreenSavers:
+	  * Tag v0.25.N
+	  * Python:
+	  * Tag v0.15.N
+	  * Fonts:
+	  * Tag v0.14.N
+
+2018-05-16 16:36  NiLuJe
+
+	* [r14949] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Package stuff for the KOA2, where applicable...
+	  Wildly untested, but should hopefully get the ball rolling...
+
+2018-05-16 00:14  NiLuJe
+
+	* [r14939] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libpng16.so.16,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh K4 binaries
+
+2018-05-15 20:56  NiLuJe
+
+	* [r14935] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libpng16.so.16,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Okay, static-libgcc experiment, let's see if that shakes things
+	  up...
+
+2018-05-15 14:47  NiLuJe
+
+	* [r14925] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Mention that using quality 78 w/ IM would probably be faster,
+	  especially w/ zlib-ng (at the cost of larger files)
+
+2018-05-14 18:31  NiLuJe
+
+	* [r14911] src/linkss/etc/ImageMagick-6/type-urw-base35.xml[ADD]:
+	  
+	  Kindle Hacks:
+	  * Add new stuff for K5 builds
+
+2018-05-14 18:30  NiLuJe
+
+	* [r14910] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/coder.xml,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/etc/ImageMagick-6/log.xml,
+	  src/linkss/etc/ImageMagick-6/mime.xml,
+	  src/linkss/etc/ImageMagick-6/policy.xml,
+	  src/linkss/etc/ImageMagick-6/quantization-table.xml,
+	  src/linkss/etc/ImageMagick-6/thresholds.xml,
+	  src/linkss/etc/ImageMagick-6/type-apple.xml,
+	  src/linkss/etc/ImageMagick-6/type-dejavu.xml,
+	  src/linkss/etc/ImageMagick-6/type-ghostscript.xml,
+	  src/linkss/etc/ImageMagick-6/type-windows.xml,
+	  src/linkss/etc/ImageMagick-6/type.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh K5 binaries
+
+2018-05-14 02:37  NiLuJe
+
+	* [r14895] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Try to handle KFX files generated by Calibre.
+	  c.f.,
+	  https://www.mobileread.com/forums/showpost.php?p=3546565&postcount=2543
+
+2017-11-25 23:28  NiLuJe
+
+	* [r14393] src/install.sh, src/linkss/bin/cover-extract,
+	  src/linkss/bin/shuffless,
+	  src/linkss/cover_cache/default-koa2.png[ADD],
+	  src/linkss/cover_cache/overlay-koa2.png[ADD],
+	  src/linkss/screensavers/00_you_can_delete_me-koa2.png[ADD]:
+	  
+	  Kindle Hacks:
+	  * Slightly more accurate KOA2 screen size...
+
+2017-11-25 04:49  NiLuJe
+
+	* [r14389] src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Fix MRPI binaries
+
+2017-11-25 04:41  NiLuJe
+
+	* [r14387] src/linkss/lib/libpng16.so.16:
+	  
+	  Kindle Hacks:
+	  * Update FBGrab & KindleTool binaries
+
+2017-11-24 22:01  NiLuJe
+
+	* [r14378] src/install.sh, src/linkss/bin/cover-extract,
+	  src/linkss/bin/linkss, src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * First pass of KOA2 detection
+
+2016-08-28 21:49  NiLuJe
+
+	* [r13420] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  • Use the proper Basic alias when building packages...
+	  Fixes the missing AU KT2 ID... Ooops.
+
+2016-07-30 15:34  NiLuJe
+
+	* [r13408] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2016-07-20 18:52  NiLuJe
+
+	* [r13390] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Update to KFXMeta 2.0
+
+2016-07-20 18:49  NiLuJe
+
+	* [r13389] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix another instance of a broken 'strip file extension' shell string
+	  op...
+
+2016-07-20 18:44  NiLuJe
+
+	* [r13388] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix KFX parsing of file with dots in their names...
+	  Stupid me.
+
+2016-07-12 15:09  NiLuJe
+
+	* [r13360] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Oops. Actually package stuff for the Oasis & the KT3... >_<"
+
+2016-07-11 12:24  NiLuJe
+
+	* [r13342] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Fix some device codes...
+
+2016-07-08 21:13  NiLuJe
+
+	* [r13339] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Some more stuff missing for KOA/KT3 support...
+
+2016-07-08 18:09  NiLuJe
+
+	* [r13337] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * *Potentially* slightly more accurate device code for the third
+	  KT3...
+
+2016-07-08 16:35  NiLuJe
+
+	* [r13336] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2016-07-08 02:43  NiLuJe
+
+	* [r13333] src/install.sh, src/linkss/bin/cover-extract,
+	  src/linkss/bin/linkss, src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * Handle the White PW3, the Oasis & the KT3
+	  * Detect FW 5.8
+
+2016-06-21 02:49  NiLuJe
+
+	* [r13309] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Update binaries (TC update)
+
+2016-06-20 13:40  NiLuJe
+
+	* [r13306] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/policy.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2016-05-18 16:37  NiLuJe
+
+	* [r13265] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/etc/ImageMagick-6/policy.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (update TC)
+
+2016-04-24 13:53  NiLuJe
+
+	* [r13216] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2016-04-17 23:32  NiLuJe
+
+	* [r13188] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/type-apple.xml[ADD],
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Linaro 5.3 2016.04)
+
+2016-04-11 15:04  NiLuJe
+
+	* [r13156] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2016-04-03 17:04  NiLuJe
+
+	* [r13099] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  KIndle Hacks:
+	  * Refresh binaries
+
+2016-03-02 20:43  NiLuJe
+
+	* [r13003] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * refresh binaries (initial GDB import)
+
+2016-02-21 00:10  NiLuJe
+
+	* [r12956] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2016-02-15 00:35  NiLuJe
+
+	* [r12910] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Deal with the stupid headless stdout encoding issue w/ kfxmeta with
+	  a very stupid and large hammer once and for all...
+
+2016-02-14 15:20  NiLuJe
+
+	* [r12909] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix a harmless typo
+
+2016-02-14 01:23  NiLuJe
+
+	* [r12903] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Linaro 5.2 2015.11-2)
+
+2016-02-07 18:12  NiLuJe
+
+	* [r12851] src/linkss/bin/convert, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2016-01-18 03:13  NiLuJe
+
+	* [r12798] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (downgrade TC to 2015.11, for some strange reason I
+	  don't have time to investigate, my 2016.01 builds are utterly
+	  broken...)
+
+2016-01-16 20:41  NiLuJe
+
+	* [r12795] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (update TC)
+
+2015-12-04 18:48  NiLuJe
+
+	* [r12672] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libpng16.so.16:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-11-28 00:59  NiLuJe
+
+	* [r12659] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-11-20 19:02  NiLuJe
+
+	* [r12644] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-11-14 21:14  NiLuJe
+
+	* [r12632] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaires (TC update).
+	  The Kobo set is incomplete because sourceforge went down during the
+	  build, and is currently still down...
+
+2015-11-13 17:06  NiLuJe
+
+	* [r12624] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libpng16.so.16:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-11-06 21:03  NiLuJe
+
+	* [r12603] src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (stop playing with FT's new TT stem darkening)
+
+2015-11-06 11:28  NiLuJe
+
+	* [r12589] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-11-05 16:24  NiLuJe
+
+	* [r12580] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-10-31 18:46  NiLuJe
+
+	* [r12573] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (fix dropbear interactive logins)
+
+2015-10-27 18:56  NiLuJe
+
+	* [r12558] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-10-22 16:23  NiLuJe
+
+	* [r12546] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-10-16 18:15  NiLuJe
+
+	* [r12526] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (TC update)
+
+2015-10-10 13:30  NiLuJe
+
+	* [r12507] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-10-03 23:11  NiLuJe
+
+	* [r12498] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (split K4/K5 FT binaries for the whole GCC 5 crashy
+	  weirdness)
+
+2015-10-03 21:06  NiLuJe
+
+	* [r12491] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (hopefully unbreaks FT overrides on legacy devices)
+
+2015-10-03 15:47  NiLuJe
+
+	* [r12487] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-09-27 14:01  NiLuJe
+
+	* [r12478] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-09-25 21:03  NiLuJe
+
+	* [r12460] build/build-updates.sh, src/install.sh,
+	  src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Experimental KFX support in cover mode, thanks to jhowell's kfxmeta
+	  script ;).
+
+2015-09-24 15:00  NiLuJe
+
+	* [r12441] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-09-20 00:16  NiLuJe
+
+	* [r12428] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaris (TC Update)
+
+2015-09-11 01:36  NiLuJe
+
+	* [r12385] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-09-05 02:01  NiLuJe
+
+	* [r12335] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (the great mmap enfixening!)
+
+2015-08-28 17:34  NiLuJe
+
+	* [r12304] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * refresh binaries
+
+2015-08-23 14:41  NiLuJe
+
+	* [r12287] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Make sure xzdec is executable before trying to launch it in install
+	  scripts....
+	  Oooops. Fixes installation on a number of setups.
+
+2015-08-20 16:50  NiLuJe
+
+	* [r12267] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-08-18 21:46  NiLuJe
+
+	* [r12250] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * Fonts:
+	  * Tag v0.13.N
+	  * Python:
+	  * Tag v0.14.N
+	  * ScreenSavers:
+	  * Tag v0.24.N
+	  * USBNetwork:
+	  * Tag v0.21.N
+
+2015-08-18 16:19  NiLuJe
+
+	* [r12244] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Wow. That was another amazing typo. >_<"
+
+2015-08-18 16:12  NiLuJe
+
+	* [r12243] build/build-updates.sh, src/install.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Move from bzip2 to xz archives. Smaller, faster, better :).
+
+2015-08-18 15:41  NiLuJe
+
+	* [r12241] README:
+	  
+	  Kindle Hacks:
+	  * Update credits for xzdec :).
+
+2015-08-17 13:47  NiLuJe
+
+	* [r12225] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Rework the new device ID stuff.
+	  Get rid of the kmodel_v2 crap, kmodel now always points to the actual
+	  device code, no matter the scheme.
+
+2015-08-16 10:33  NiLuJe
+
+	* [r12203] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (TC update)
+
+2015-08-15 09:46  NiLuJe
+
+	* [r12172] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-08-14 17:52  NiLuJe
+
+	* [r12153] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Cover all bases when detecting models to avoid potential false
+	  positives with the new device ID scheme...
+
+2015-08-14 14:10  NiLuJe
+
+	* [r12151] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Rework the model detection to handle the PW3 properly...
+
+2015-08-14 09:39  NiLuJe
+
+	* [r12137] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libpng16.so.16:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-08-01 16:03  NiLuJe
+
+	* [r12110] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Package stuff for the PW3, and update docs accordingly.
+
+2015-08-01 15:49  NiLuJe
+
+	* [r12109] src/install.sh, src/linkss/bin/cover-extract,
+	  src/linkss/bin/linkss, src/linkss/bin/shuffless:
+	  
+	  Kindle Hacks:
+	  * First innacurate stab at detecting the PW3.
+	  This will probably need to be fixed at one point...
+
+2015-07-30 06:39  NiLuJe
+
+	* [r12103] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-07-27 03:04  NiLuJe
+
+	* [r12097] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-07-26 23:30  NiLuJe
+
+	* [r12090] src/linkss/bin/cover-watchdog-helper:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * More accurate log in case of cover processing failure
+
+2015-07-25 22:00  NiLuJe
+
+	* [r12088] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Add a time limit to the PI tag generation, too. Don't let it burn up
+	  the CPU for more than 90s.
+
+2015-07-25 21:23  NiLuJe
+
+	* [r12087] src/linkss/bin/cover-watchdog-helper:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Delay the cover processing a bit more, FW 5.6.x is pretty terrible
+	  on the PW1...
+
+2015-07-25 18:36  NiLuJe
+
+	* [r12086] src/linkss/bin/convert, src/linkss/bin/inotifywait:
+	  
+	  And a final round of VSN keyword pruning...
+
+2015-07-25 18:30  NiLuJe
+
+	* [r12084] src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libpng16.so.16,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Fix some more nonsensical keywords on binary files...
+
+2015-07-25 17:45  NiLuJe
+
+	* [r12080] src/linkss/bin/convert, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-06-17 01:45  NiLuJe
+
+	* [r12038] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (update IM to fix a ScreenSavers regression)
+
+2015-06-16 23:26  NiLuJe
+
+	* [r12036] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * More comments polishing
+
+2015-06-16 23:24  NiLuJe
+
+	* [r12035] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Forgot to document one more weird side-effect on the 'broken' IM
+	  versions...
+
+2015-06-16 23:18  NiLuJe
+
+	* [r12034] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Put the IM/eips thing to rest (for now). It'll be fixed once the new
+	  binaries are up.
+
+2015-06-16 23:05  NiLuJe
+
+	* [r12033] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Yuuup, that was an IM issue. >_<"
+
+2015-06-16 22:30  NiLuJe
+
+	* [r12031] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Keep battling IM for eips compatibility.
+	  WIP, pending an IM update, because there might be a bug in 6.9.1-4 on
+	  that front...
+
+2015-06-16 21:36  NiLuJe
+
+	* [r12030] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Tweak IM PNG conversion details to fix a regression with the latest
+	  IM builds.
+	  (eips was choking on our images because the colormap generation was
+	  skipped by default on greyscale image)
+
+2015-06-16 18:49  NiLuJe
+
+	* [r12029] src/linkss/bin/linkss:
+	  
+	  Kindle Touch Hacks:
+	  * Check the return code of start-stop-daemon, and warn if shit failed
+	  to start/stop
+
+2015-06-13 14:57  NiLuJe
+
+	* [r12025] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-06-05 22:17  NiLuJe
+
+	* [r12019] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  • Refresh binaries
+
+2015-05-31 01:14  NiLuJe
+
+	* [r12014] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-05-25 18:33  NiLuJe
+
+	* [r12003] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-05-08 15:38  NiLuJe
+
+	* [r11976] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * Fonts:
+	  * Tag v0.12.N
+	  * JailBreak:
+	  * Tag v1.15.N
+	  * Python:
+	  * Tag v0.13.N
+	  * ScreenSavers:
+	  * Tag v0.23.N
+	  * USBNetwork:
+	  * Tag v0.20.N
+
+2015-05-07 22:32  NiLuJe
+
+	* [r11963] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Update binaries (updated TC)
+
+2015-05-01 02:02  NiLuJe
+
+	* [r11924] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Update binaries
+
+2015-04-28 19:31  NiLuJe
+
+	* [r11910] build/build-updates.sh:
+	  
+	  The great shebang enfixening!
+
+2015-03-11 00:58  NiLuJe
+
+	* [r11729] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-03-10 18:02  NiLuJe
+
+	* [r11726] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Flush FS buffers after switching to a new cover. Feels overkill and
+	  stupid, but who knows, it might help jog the framework.
+
+2015-03-07 16:23  NiLuJe
+
+	* [r11725] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-03-07 01:28  NiLuJe
+
+	* [r11720] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6,
+	  src/linkss/lib/libharfbuzz.so.0, src/linkss/lib/libpng16.so.16:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-02-26 13:36  NiLuJe
+
+	* [r11688] src/linkss/lib/libharfbuzz.so.0:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (fix Python)
+
+2015-02-26 03:38  NiLuJe
+
+	* [r11686] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Avoid lbzip2 entirely for stuff that'll be processed on the
+	  device...
+	  Even without the -u flag, the Kindle's crappy busybox version
+	  sometimes
+	  chokes on it...
+
+2015-02-26 02:23  NiLuJe
+
+	* [r11684] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so.6, src/linkss/lib/libharfbuzz.so.0,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh bianries...
+	  (LTO, AKA, The Breakening!)
+
+2015-02-25 15:00  NiLuJe
+
+	* [r11663] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/etc/ImageMagick-6/type-dejavu.xml,
+	  src/linkss/etc/ImageMagick-6/type-ghostscript.xml,
+	  src/linkss/etc/ImageMagick-6/type.xml:
+	  
+	  Kindle Hacks:
+	  • Resync binaries
+
+2015-02-23 23:36  NiLuJe
+
+	* [r11624] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Don't use lbzip2's -u flag: busybox's bzip2 doesn't seem to handle
+	  archives created that way...
+
+2015-02-23 22:30  NiLuJe
+
+	* [r11620] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Parallelize compression in buildscripts... (lbzip2, pigz & threaded
+	  xz)
+
+2015-02-23 21:03  NiLuJe
+
+	* [r11616] src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-02-23 02:18  NiLuJe
+
+	* [r11604] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * refresh binaries (fix readline)
+
+2015-02-22 20:47  NiLuJe
+
+	* [r11589] src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Update binaries (misc zsh support)
+
+2015-02-22 14:25  NiLuJe
+
+	* [r11576] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-02-20 06:30  NiLuJe
+
+	* [r11558] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (fix strace)
+
+2015-02-19 23:37  NiLuJe
+
+	* [r11554] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (strace w/ libunwind, Python & SQLite3 w/ readline)
+
+2015-02-18 21:19  NiLuJe
+
+	* [r11541] src/linkss/bin/convert, src/linkss/lib/libfreetype.so.6:
+	  
+	  Kindle Hacks:
+	  * Update binaries (widec ncurses)
+
+2015-02-18 10:45  NiLuJe
+
+	* [r11538] build/build-updates.sh, src/linkss/lib/libfreetype.so[DEL],
+	  src/linkss/lib/libfreetype.so.6[CPY]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Oops. *Really* fix pinfo on FW 5.6.1...
+
+2015-02-17 23:35  NiLuJe
+
+	* [r11537] README, src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libfreetype.so[ADD],
+	  src/linkss/lib/libharfbuzz.so.0[ADD], src/linkss/lib/libpng16.so.16,
+	  src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Linaro 4.9 2015.02)
+
+2015-02-17 19:18  NiLuJe
+
+	* [r11528] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix pinfo support on FW 5.6.1 (thanks to yecam for the report).
+	  (Amazon's updated FT build segfaults with our IM build, so use our own
+	  FT).
+
+2015-02-16 18:05  NiLuJe
+
+	* [r11521] src/linkss/bin/cover-watchdog-helper:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Minor typo in a comment
+
+2015-02-14 00:24  NiLuJe
+
+	* [r11514] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * Python:
+	  * Tag v0.12.N
+	  * Fonts:
+	  * Tag v0.11.N
+	  * ScreenSavers:
+	  * Tag v0.22.N
+	  * USBNetwork:
+	  * Tag v0.19.N
+
+2015-02-12 18:23  NiLuJe
+
+	* [r11499] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Update binaries
+
+2015-01-31 19:58  NiLuJe
+
+	* [r11464] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-01-17 20:34  NiLuJe
+
+	* [r11432] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/etc/ImageMagick-6/policy.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2015-01-05 23:16  NiLuJe
+
+	* [r11332] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml,
+	  src/linkss/etc/ImageMagick-6/policy.xml,
+	  src/linkss/lib/libpng16.so.16:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-12-18 13:05  NiLuJe
+
+	* [r11252] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/lib/libpng16.so.16, src/linkss/lib/libz.so.1:
+	  
+	  Kindle Hacks:
+	  * Refresh binaires (updated TC)
+
+2014-12-07 14:22  NiLuJe
+
+	* [r11231] src/uninstall.sh:
+	  
+	  Kindle Hacks:
+	  * Ooops. Fix complete uninstalls. Remove the KUAL extensions *before*
+	  the hack folder, or we lose the trigger file ;p
+
+2014-12-02 18:38  NiLuJe
+
+	* [r11218] src/linkss/bin/linkss:
+	  
+	  Kindle Hacks:
+	  * Make sure our mounted flags don't disappear into the ether if for
+	  some reason an unmount failed at one point
+
+2014-11-28 20:46  NiLuJe
+
+	* [r11172] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-11-25 21:29  NiLuJe
+
+	* [r11168] src/linkss/bin/convert, src/linkss/lib/libpng16.so.16:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-11-25 19:02  NiLuJe
+
+	* [r11165] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * MKK:
+	  * Tag v20141125
+	  * ScreenSavers:
+	  * Tag v0.21.N
+
+2014-11-22 18:45  NiLuJe
+
+	* [r11135] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-11-17 18:12  NiLuJe
+
+	* [r11112] src/linkss/bin/cover-watchdog:
+	  
+	  Kindle Hacks:
+	  * Tweak some broken eips calls (invalid chars)
+
+2014-11-15 21:03  NiLuJe
+
+	* [r11085] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-11-14 18:47  NiLuJe
+
+	* [r11072] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-11-14 17:29  NiLuJe
+
+	* [r11071] src/linkss/bin/cover-extract, src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Yup, FW 5.6 killed the size hint from the ss prefix on the PW2, too
+	  ;).
+
+2014-11-08 19:25  NiLuJe
+
+	* [r11056] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Tag v0.20.N
+
+2014-11-08 19:22  NiLuJe
+
+	* [r11055] src/install.sh:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Oops, forgot to add the KV default screensaver to the install
+	  exclude list on upgrade...
+
+2014-11-08 15:52  NiLuJe
+
+	* [r11054] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-11-08 13:44  NiLuJe
+
+	* [r11051] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Tag v0.19.N
+
+2014-11-07 23:25  NiLuJe
+
+	* [r11047] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect more KV variants
+
+2014-11-07 19:57  NiLuJe
+
+	* [r11046] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-11-07 19:38  NiLuJe
+
+	* [r11045] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Package stuff for the Voyage
+
+2014-11-07 18:54  NiLuJe
+
+	* [r11043] src/linkss/bin/cover-extract, src/linkss/bin/linkss,
+	  src/linkss/bin/shuffless, src/linkss/cover_cache/default-kv.png[ADD],
+	  src/linkss/cover_cache/overlay-kv.png[ADD]:
+	  
+	  Kindle Hacks:
+	  * Second pass of Kindle Voyage support...
+
+2014-11-07 18:01  NiLuJe
+
+	* [r11042] src/install.sh,
+	  src/linkss/screensavers/00_you_can_delete_me-kv.png[ADD],
+	  src/linkss/screensavers/00_you_can_delete_me-pw.png:
+	  
+	  Kindle Hacks:
+	  * First pass at detecting the Voyage...
+
+2014-11-05 18:09  NiLuJe
+
+	* [r11032] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-10-25 00:34  NiLuJe
+
+	* [r10997] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  • JailBreak:
+	  • Tag v1.12.N
+	  • K4 JailBreak:
+	  • Tag v1.8.N
+	  • USBNetwork:
+	  • Tag v0.17.N
+	  • ScreenSavers:
+	  • Tag v0.18.N
+	  • Python:
+	  • Tag v0.11.N
+	  • Fonts:
+	  • Tag v0.9.N
+
+2014-10-25 00:05  NiLuJe
+
+	* [r10996] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-10-18 02:31  NiLuJe
+
+	* [r10971] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-10-08 23:05  NiLuJe
+
+	* [r10963] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-10-08 20:07  NiLuJe
+
+	* [r10961] src/linkss/bin/convert, src/linkss/lib/libpng16.so.16[ADD],
+	  src/linkss/lib/libz.so.1[ADD]:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (introduce strace & friends)
+
+2014-10-08 16:44  NiLuJe
+
+	* [r10958] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Handle the new binaries properly when building split packages...
+
+2014-10-08 15:25  NiLuJe
+
+	* [r10954] src/linkss/lib[ADD]:
+	  
+	  Kindle Hacks:
+	  * X-TC:
+	  * Build & ship w/ USBNet strace, some elfutils tools & ltrace
+
+2014-10-06 17:11  NiLuJe
+
+	* [r10951] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Bundle stuff for the KT2... Hope springs eternal ;).
+
+2014-10-06 17:00  NiLuJe
+
+	* [r10950] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-09-27 15:33  NiLuJe
+
+	* [r10933] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-09-05 19:38  NiLuJe
+
+	* [r10916] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-09-02 01:25  NiLuJe
+
+	* [r10893] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-08-26 16:44  NiLuJe
+
+	* [r10858] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaires (Hopefully fix Python sqlite3)
+
+2014-08-26 03:51  NiLuJe
+
+	* [r10853] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Python w/ SQLite3, DropBear KeepAlive + PuTTy fix)
+
+2014-08-22 21:00  NiLuJe
+
+	* [r10841] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (updated TC)
+
+2014-08-13 18:50  NiLuJe
+
+	* [r10829] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-08-12 03:49  NiLuJe
+
+	* [r10827] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-07-30 04:32  NiLuJe
+
+	* [r10783] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Updated TC, first GCC 4.9 builds)
+
+2014-07-28 18:08  NiLuJe
+
+	* [r10778] src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-07-28 01:52  NiLuJe
+
+	* [r10774] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-07-27 20:24  NiLuJe
+
+	* [r10766] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries ;).
+
+2014-07-26 21:30  NiLuJe
+
+	* [r10751] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-07-24 18:31  NiLuJe
+
+	* [r10726] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-07-21 22:23  NiLuJe
+
+	* [r10721] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect a bunch of new unidentified PW2 models
+
+2014-07-15 18:45  NiLuJe
+
+	* [r10714] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the 4GB, 3G EU PW2
+
+2014-07-12 22:55  NiLuJe
+
+	* [r10711] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-07-07 22:19  NiLuJe
+
+	* [r10702] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the 4GB EU WiFi PW2
+
+2014-07-05 15:12  NiLuJe
+
+	* [r10693] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-06-30 23:59  NiLuJe
+
+	* [r10685] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-06-26 23:56  NiLuJe
+
+	* [r10677] src/install.sh, src/uninstall.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Fix logmsg() usage. The third arg is for key=value pairs.
+
+2014-06-26 21:21  NiLuJe
+
+	* [r10674] build/build-updates.sh, build/consts[DEL], build/ui[DEL],
+	  src/install.sh, src/uninstall.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Move everyone to libOTAUtils
+
+2014-06-24 23:01  NiLuJe
+
+	* [r10662] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  • More portability fixes for the build scripts
+
+2014-06-24 22:21  NiLuJe
+
+	* [r10658] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  • Detect GNU tar properly on OS X.
+	  The individual build scripts should now run on OS X, but the release
+	  scripts probably still don't (svn2cl [trivial], and some sed usage,
+	  mostly).
+
+2014-06-22 04:06  NiLuJe
+
+	* [r10650] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-06-18 22:18  NiLuJe
+
+	* [r10617] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-06-18 21:25  NiLuJe
+
+	* [r10613] README:
+	  
+	  Kindle Hacks:
+	  * Update CREDITS for fbgrab, harfbuzz & zlib
+
+2014-06-06 17:30  NiLuJe
+
+	* [r10585] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-05-26 09:33  NiLuJe
+
+	* [r10562] src/uninstall.sh:
+	  
+	  Kindle Hacks
+	  • Proper logging on full uninstall
+
+2014-05-18 01:10  NiLuJe
+
+	* [r10554] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-05-10 04:32  NiLuJe
+
+	* [r10531] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-04-26 21:15  NiLuJe
+
+	* [r10498] src/linkss/bin/convert, src/linkss/bin/inotifywait:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (minor updates, and the whole FT w/ HB thing)
+
+2014-04-11 13:08  NiLuJe
+
+	* [r10460] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  KUAL Extensions:
+	  * gawk:
+	  * Tag v1.3.N
+	  Kindle Touch Hacks:
+	  * JailBreak:
+	  * Tag v1.10.N
+	  * USBNetwork:
+	  * Tag v0.16.N
+	  * ScreenSavers:
+	  * Tag v0.17.N
+	  * Python:
+	  * Tag v0.10.N
+	  * Fonts:
+	  * Tag v0.8.N
+	  Kindle Hacks:
+	  * JailBreak:
+	  * Tag v0.12.N
+	  * ScreenSavers:
+	  * Tag v0.43.N
+	  * Fonts:
+	  * Tag v5.13.N
+	  * USBNetwork:
+	  * Tag v0.54.N
+	  * Python:
+	  * Tag v0.10.N
+
+2014-04-11 12:12  NiLuJe
+
+	* [r10459] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Linaro 2014.04)
+
+2014-03-27 17:38  NiLuJe
+
+	* [r10437] src/install.sh, src/uninstall.sh:
+	  
+	  Kindle Touch Hacks:
+	  • ScreenSavers:
+	  • Handle v2 of yifan's simple_screensaver hack when
+	  installing/uninstalling.
+	  (Thanks to kosmi for catching that one ;)).
+
+2014-03-25 06:25  NiLuJe
+
+	* [r10435] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2014-03-15 23:23  NiLuJe
+
+	* [r10420] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Updated TC)
+
+2014-03-09 23:15  NiLuJe
+
+	* [r10412] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix the pinfo regression
+
+2014-03-08 23:08  NiLuJe
+
+	* [r10409] src/uninstall.sh:
+	  
+	  Kindle Hacks:
+	  * Remove KUAL extensions in full uninstall mode
+
+2014-03-06 23:04  NiLuJe
+
+	* [r10406] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Merge dsmid's pinfo improvements (custom header & proper utf-8
+	  handling).
+	  cf.
+	  http://www.mobileread.com/forums/showpost.php?p=2772893&postcount=957
+	  Thanks dsmid!
+
+2014-03-06 22:53  NiLuJe
+
+	* [r10404] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the CA PW2 3G
+
+2014-03-06 22:40  NiLuJe
+
+	* [r10402] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (bump FT, FC, IM, KindleTool; dropbear)
+
+2014-02-15 01:07  NiLuJe
+
+	* [r10348] src/linkss/bin/cover-watchdog-helper:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix periodicals cover extraction
+
+2014-02-15 00:57  NiLuJe
+
+	* [r10347] src/linkss/bin/cover-watchdog-helper:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix periodicals reader detection
+
+2014-02-14 17:44  NiLuJe
+
+	* [r10330] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Optionally handle periodicals in cover mode
+
+2014-02-14 17:27  NiLuJe
+
+	* [r10328] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Use Update_*.bin package filenames instead of update_*.bin,
+	  to avoid triggering the recovery updater on boot. (thanks, dsmid ;))
+
+2014-02-14 16:58  NiLuJe
+
+	* [r10327] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Update TC)
+
+2014-01-24 23:51  NiLuJe
+
+	* [r10320] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  • Refresh binaries (updated TC)
+
+2014-01-10 03:55  NiLuJe
+
+	* [r10305] src/install.sh:
+	  
+	  Revert r10301, false alarm ;).
+
+2014-01-09 23:10  NiLuJe
+
+	* [r10301] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect a new 3G PW2 model (Central Africa?)
+
+2014-01-09 22:55  NiLuJe
+
+	* [r10300] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Update binaries (updated TC)
+
+2013-12-23 16:13  NiLuJe
+
+	* [r10250] src/install.sh:
+	  
+	  Avoid some forks & simplify model detection...
+	  
+	  For some strange reason, I was convinced cut wasn't feature-complete
+	  enough to handle that on FW 2.x... o_O
+
+2013-12-23 14:32  NiLuJe
+
+	* [r10248] src/linkss/bin/convert, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2013-12-10 19:05  NiLuJe
+
+	* [r10218] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2013-12-08 02:49  NiLuJe
+
+	* [r10213] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2013-12-06 19:51  NiLuJe
+
+	* [r10206] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * USBNetwork:
+	  * Tag v0.15.N
+	  * ScreenSavers:
+	  * Tag v0.16.N
+	  * Python:
+	  * Tag v0.9.N
+	  * Fonts:
+	  * Tag v0.7.N
+
+2013-12-03 19:47  NiLuJe
+
+	* [r10194] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Update FT, FC, DB, LA, Python)
+
+2013-11-30 18:26  NiLuJe
+
+	* [r10186] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2013-11-28 19:49  NiLuJe
+
+	* [r10182] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (update FT, FC, silence an OpenSSH warning on the
+	  PW2)
+
+2013-11-28 17:49  NiLuJe
+
+	* [r10177] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the JP 3G PW2
+
+2013-11-25 17:23  NiLuJe
+
+	* [r10171] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the RU 3G PW2
+
+2013-11-24 13:02  NiLuJe
+
+	* [r10169] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Handle the weird 90-prefixed S/N...
+
+2013-11-23 18:11  NiLuJe
+
+	* [r10163] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Build PW2-specific packages
+
+2013-11-23 17:53  NiLuJe
+
+	* [r10161] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Switch to --exclude-vcs everywhere
+
+2013-11-23 16:47  NiLuJe
+
+	* [r10158] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Add PW2 binaries)
+
+2013-11-23 14:51  NiLuJe
+
+	* [r10152] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the EU 3G PW2
+
+2013-11-19 23:48  NiLuJe
+
+	* [r10119] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Hopefully, fix OpenSSH on FW >= 5.3.9)
+
+2013-11-18 19:39  NiLuJe
+
+	* [r10115] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (TC update)
+
+2013-11-16 17:16  NiLuJe
+
+	* [r10097] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2013-11-15 16:29  NiLuJe
+
+	* [r10085] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Go back to using the Gray colorspace. IM defaults to sensible
+	  settings,
+	  and it appears for some mysterious reason to be faster than asking for
+	  Rec709Luma ourselves :?
+
+2013-11-15 16:20  NiLuJe
+
+	* [r10083] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Some notes about GraphicsMagick (and why we're not using it)
+
+2013-11-15 15:50  NiLuJe
+
+	* [r10082] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Switch to the ITU-R BT.709-5 Gray colorspace, and not the legacy
+	  one.
+
+2013-11-12 17:59  NiLuJe
+
+	* [r10067] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (again, mostly for KindleTool)
+
+2013-11-11 00:40  NiLuJe
+
+	* [r10058] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries...
+
+2013-11-10 23:07  NiLuJe
+
+	* [r10053] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Detect the PW2 3G US
+
+2013-11-01 15:04  NiLuJe
+
+	* [r10017] src/install.sh:
+	  
+	  Kindle Stuff:
+	  * Detect the JP PW2 WiFi
+
+2013-11-01 00:56  NiLuJe
+
+	* [r10015] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2013-10-17 18:40  NiLuJe
+
+	* [r9973] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * USBNet:
+	  * Tag v0.13.N
+	  * ScreenSavers:
+	  * Tag v0.15.N
+	  * Python
+	  * Tag v0.8.N
+	  * Fonts
+	  * Tag v0.6.N
+
+2013-10-17 18:34  NiLuJe
+
+	* [r9971] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (TC update)
+
+2013-10-11 22:19  NiLuJe
+
+	* [r9945] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2013-10-03 21:20  NiLuJe
+
+	* [r9912] src/linkss/bin/linkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix a typo in a log message
+
+2013-10-03 17:32  NiLuJe
+
+	* [r9911] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Handle the PW2 WiFi device code
+
+2013-09-25 16:03  NiLuJe
+
+	* [r9888] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries
+
+2013-09-25 15:33  NiLuJe
+
+	* [r9887] build/build-updates.sh, src/install.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Use bzip2 to package stuff
+
+2013-09-24 21:49  NiLuJe
+
+	* [r9865] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Fonts:
+	  * Update FT & FC binaries (update ft & fc)
+	  * USBNet:
+	  * Bundle the full OpenSSH suite (client & co)
+	  * Bundle sshfs (thanks to twobob for the push ;p)
+
+2013-09-20 13:56  NiLuJe
+
+	* [r9843] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries, mainyl for an FT update that fix glyph cropping
+	  for emboldened font
+
+2013-09-19 17:53  NiLuJe
+
+	* [r9825] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Tag v0.14.N
+
+2013-09-18 14:48  NiLuJe
+
+	* [r9817] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Clear the cache folder in case KindleUNpack fails to extract a
+	  cover,
+	  in case I messed up and it left something behind...
+	  * MobiCover:
+	  * Fix a regression where a combo file with a cover in the M7 part,
+	  but not in the KF8 part would make KindleUnpack believe that it
+	  couldn't
+	  find any cover at all (scope issue, the latest part [KF8] took
+	  precedence).
+
+2013-09-18 13:18  NiLuJe
+
+	* [r9815] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * USBNetwork:
+	  * Tag v0.11.N
+	  * ScreenSavers:
+	  * Tag v0.13.N
+	  * Python:
+	  * Tag v0.7.N
+	  * Fonts:
+	  * Tag v0.4.N
+
+2013-09-18 12:54  NiLuJe
+
+	* [r9811] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Linaro 4.8 2013.09)
+
+2013-08-16 23:45  NiLuJe
+
+	* [r9736] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * USBNet:
+	  * Tag v0.10.N
+	  * ScreenSavers:
+	  * Tag v0.12.N
+	  * Python:
+	  * Tag v0.6.N
+	  * Fonts:
+	  * Tag v0.3.N
+
+2013-08-16 23:34  NiLuJe
+
+	* [r9734] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Linaro 2013.08)
+
+2013-08-12 03:40  NiLuJe
+
+	* [r9703] src/linkss/bin/convert,
+	  src/linkss/etc/ImageMagick-6/delegates.xml:
+	  
+	  Kindle Touch Hacks:
+	  * Binary refresh, for the FT patch test...
+
+2013-08-02 21:04  NiLuJe
+
+	* [r9649] src/install.sh, src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * Don't set PYTHONHOME anymore when calling Python, it's not needed
+	  anymore
+
+2013-08-02 19:57  NiLuJe
+
+	* [r9642] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (fix Python ssl & pyexpat modules)
+
+2013-07-31 15:16  NiLuJe
+
+	* [r9621] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Linaro 4.8-2013.07-1)
+
+2013-07-31 14:23  NiLuJe
+
+	* [r9619] src/linkss/autoreboot[DEL]:
+	  
+	  Kindle Touch Hacks:
+	  * Fonts & ScreenSavers:
+	  * Now that we can trigger those via KUAL, disable the autoreboot
+	  watchdog by default
+
+2013-07-29 23:23  NiLuJe
+
+	* [r9570] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries, fix fc-scan
+
+2013-07-29 00:33  NiLuJe
+
+	* [r9557] src/linkss/bin/linkss:
+	  
+	  Kindle Touch Hacks:
+	  * Fonts:
+	  * Initial watchdog tweaks for Fonts...
+
+2013-07-24 16:35  NiLuJe
+
+	* [r9541] build/build-updates.sh, src/linkss/bin/libkh5[DEL],
+	  src/linkss/bin/usb-watchdog[DEL],
+	  src/linkss/bin/usb-watchdog-helper[DEL]:
+	  
+	  Kindle Touch Hacks:
+	  * Move libkh5 & usb-watchdog to a Common directory so that I only
+	  have one copy to maintain...
+
+2013-07-18 16:55  NiLuJe
+
+	* [r9528] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Touch:
+	  * Refresh binaries
+
+2013-07-18 06:21  NiLuJe
+
+	* [r9523] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Touch Hacks:
+	  * Switch to -O3 Thumb binaries. They're still smaller than O2 ARM, and
+	  are
+	  a teeeeny tiny bit faster for our most ressource hungry task (convert
+	  resize+dither)
+
+2013-07-18 05:59  NiLuJe
+
+	* [r9522] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Touch Hacks:
+	  * Thumb, O2 binaries...
+
+2013-07-16 17:47  NiLuJe
+
+	* [r9510] src/linkss/bin/libkh5:
+	  
+	  Kindle Hacks:
+	  * LibKH5:
+	  * Make some note about devcap
+
+2013-07-14 16:15  NiLuJe
+
+	* [r9505] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries. (Go back to ARM instruction set on the K5,
+	  Tweak IM to be less memory hungry (q8, CacheShift 3)).
+
+2013-07-14 16:09  NiLuJe
+
+	* [r9504] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Make the dithering algorithm configurable
+
+2013-07-14 15:56  NiLuJe
+
+	* [r9503] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Tweak the dithering settings/comments for the next IM build (q8,
+	  CacheShift 3)
+
+2013-07-14 02:47  NiLuJe
+
+	* [r9499] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * Keep the current autoreboot config when updating
+
+2013-07-14 01:42  NiLuJe
+
+	* [r9498] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * Amend docs for the OOM symptoms IM's memhungry dithering can trigger
+
+2013-07-14 01:19  NiLuJe
+
+	* [r9497] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Touch Hacks:
+	  * Go back to -O2 & Thumb2 binaries
+
+2013-07-14 01:16  NiLuJe
+
+	* [r9496] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Think about limiting the life expectancy of an IM process...
+
+2013-07-14 00:14  NiLuJe
+
+	* [r9493] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Touch Hacks:
+	  * Experimental O3 / thumb binaries...
+
+2013-07-14 00:11  NiLuJe
+
+	* [r9492] src/linkss/bin/cover-extract, src/linkss/bin/linkss:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Make dithering configurable (via the lowmem switch) because it eats
+	  a fuckload of RAM, to the point of swapping on some devices.
+
+2013-07-13 23:29  NiLuJe
+
+	* [r9491] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Touch Hacks:
+	  * Highly experimental switch to Thumb2 binaries...
+	  (In an attempt lower memory consumption to avoid making the PW swap
+	  when dithering
+	  with ImageMagick...)
+
+2013-07-13 19:40  NiLuJe
+
+	* [r9487] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Hacks:
+	  * X-TC:
+	  * Tag v2013.07.N
+	  * ScreenSavers:
+	  * Tag v0.38.N
+	  * Fonts:
+	  * Tag v5.9.N
+	  * Python:
+	  * Tag v0.5.N
+	  * USBNetwork:
+	  * Tag v0.49.N
+	  Kindle Touch Hacks:
+	  * Python:
+	  * Tag v0.5.N
+	  * ScreenSavers:
+	  * Tag v0.11.N
+	  * USBNetwork:
+	  * Tag v0.9.N
+
+2013-07-13 18:21  NiLuJe
+
+	* [r9486] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (Bump to TC Linaro 2013.07)
+
+2013-07-13 17:56  NiLuJe
+
+	* [r9484] src/linkss/bin/cover-extract,
+	  src/linkss/etc/kindle_colors.gif[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Tweak the dithering to use the proper colormap the eips screen can
+	  actually show
+
+2013-07-07 15:22  NiLuJe
+
+	* [r9455] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Tag v0.10.N
+
+2013-07-07 15:00  NiLuJe
+
+	* [r9451] src/linkss/bin/shuffless:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Be a little more lenient with uppercase files, even if I don't
+	  really like it... ;)
+
+2013-07-07 03:25  NiLuJe
+
+	* [r9446] src/linkss/bin/shuffless, src/linkss/bin/unlinkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Minor purely cosmetic formatting fixes
+
+2013-07-07 02:39  NiLuJe
+
+	* [r9445] src/linkss/bin/linkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * More verbosity tweaks
+
+2013-07-07 02:27  NiLuJe
+
+	* [r9444] src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Quiet this down, doesn't warrant an always on print ;)
+
+2013-07-07 00:33  NiLuJe
+
+	* [r9443] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * And fix another stupid c/p typo...
+
+2013-07-07 00:23  NiLuJe
+
+	* [r9442] src/linkss/bin/linkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Ahaha. Of course, it's the lamest possible thing that I forgot.
+	  Launch watchdogs with tmpfs mounts, too ;).
+
+2013-07-07 00:07  NiLuJe
+
+	* [r9441] src/linkss/bin/cover-extract, src/linkss/bin/libkh5,
+	  src/linkss/bin/linkss, src/linkss/bin/shuffless,
+	  src/linkss/bin/unlinkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Somewhat massive design overhaul to avoid unnecessary IO
+	  (tmpfs in cover & last mode, slightly smarter shuffle in cycle mode)
+
+2013-07-05 00:37  NiLuJe
+
+	* [r9435] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Tag v0.9.N
+
+2013-07-05 00:31  NiLuJe
+
+	* [r9433] src/linkss/cover_cache/default-pw.png,
+	  src/linkss/cover_cache/default.png:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Tweak the default cover mode image to be a bit more helpful than a
+	  blank screen ;).
+
+2013-07-04 22:24  NiLuJe
+
+	* [r9428] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries (update FC snapshot)
+
+2013-07-02 03:39  NiLuJe
+
+	* [r9401] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh binaries. Link ImageMagick (libpng) & Python against a
+	  static zlib to avoid symbol versioning issues.
+	  (it broke opening PNG files for IM, which in turn broke the pinfo
+	  support in the ScreenSavers hack).
+
+2013-07-01 22:00  NiLuJe
+
+	* [r9389] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * USBNetwork:
+	  * Tag v0.8.N
+	  * Python:
+	  * Tag v0.4.N
+	  * ScreenSavers:
+	  * Tag v0.8.N
+
+2013-07-01 21:52  NiLuJe
+
+	* [r9388] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Bundle & Install the KUAL extensions
+
+2013-07-01 18:35  NiLuJe
+
+	* [r9380] src/linkss/bin/linkss, src/linkss/bin/unlinkss:
+	  
+	  Kindle Hacks:
+	  * Some minor tweaks to the new watchdog traps
+
+2013-07-01 01:28  NiLuJe
+
+	* [r9369] src/linkss/bin/cover-watchdog, src/linkss/bin/linkss,
+	  src/linkss/bin/unlinkss, src/linkss/bin/usb-watchdog:
+	  
+	  Kindle Touch Hacks:
+	  * Same thing as the legacy hacks, be more gentle when killing stuff so
+	  our traps can trigger
+
+2013-06-24 23:51  NiLuJe
+
+	* [r9333] src/linkss/bin/convert:
+	  
+	  Kindle Hacks:
+	  * Refresh Touch binaries
+
+2013-06-24 20:15  NiLuJe
+
+	* [r9325] build/build-updates.sh:
+	  
+	  Kindle Hacks:
+	  * Make all build scripts automatically bomb out on non 0 return codes,
+	  so I can safely catch
+	  snafus during my full rebuilds...
+
+2013-06-24 19:39  NiLuJe
+
+	* [r9322] src/linkss/info.txt:
+	  
+	  Kindle Hacks:
+	  * Make the uninstall hint in the info.txt a little bit clearer,
+	  following a suggestion
+	  by mitakka
+	  (http://www.mobileread.com/forums/showpost.php?p=2447890&postcount=3026)
+
+2013-06-23 22:35  NiLuJe
+
+	* [r9316] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort,
+	  src/linkss/etc/ImageMagick-6/coder.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/colors.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/delegates.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/log.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/magic.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/mime.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/policy.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/quantization-table.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/thresholds.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/type-dejavu.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/type-ghostscript.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/type-windows.xml[ADD],
+	  src/linkss/etc/ImageMagick-6/type.xml[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * Update ALL THE THINGS!
+
+2013-06-23 17:50  NiLuJe
+
+	* [r9312] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Handle the ImageMagick config migration
+
+2013-06-23 17:50  NiLuJe
+
+	* [r9311] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Fix cover processing with latest ImageMagick...
+
+2013-06-23 16:57  NiLuJe
+
+	* [r9309] src/linkss/etc/ImageMagick[DEL],
+	  src/linkss/etc/ImageMagick-6[CPY],
+	  src/linkss/etc/ImageMagick-6/coder.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/colors.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/delegates.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/log.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/magic.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/mime.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/policy.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/quantization-table.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/thresholds.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/type-dejavu.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/type-ghostscript.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/type-windows.xml[DEL],
+	  src/linkss/etc/ImageMagick-6/type.xml[DEL]:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Move to IM 6.8
+
+2013-06-18 22:44  NiLuJe
+
+	* [r9282] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix grayscale conversion settings for IM >= 6.8.0
+	  (Cf. http://www.imagemagick.org/script/color-management.php)
+
+2013-06-15 16:06  NiLuJe
+
+	* [r9276] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * More stuff to check...
+
+2013-06-15 16:04  NiLuJe
+
+	* [r9275] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Add a note about more stuff to check w/ ImageMagick...
+
+2013-04-26 16:50  NiLuJe
+
+	* [r9095] src/install.sh, src/linkss/bin/libkh5:
+	  
+	  Kindle Touch Hacks:
+	  * Detect the Brazilian 3G PW
+
+2013-02-11 22:44  NiLuJe
+
+	* [r9065] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Braindump on the 'less IO' refactor front...
+
+2013-01-29 15:44  NiLuJe
+
+	* [r9048] src/install.sh, src/linkss/bin/libkh5:
+	  
+	  Kindle Touch Hacks:
+	  * Properly detect JP & CA 3G PW devices
+
+2013-01-21 22:51  NiLuJe
+
+	* [r9038] src/linkss/info.txt:
+	  
+	  Kindle Hacks:
+	  * Oops. Forgot to update the info.txt files. -_-"
+
+2013-01-19 21:11  NiLuJe
+
+	* [r9037] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * Python:
+	  * Tag v0.3.N
+	  * USBNetwork:
+	  * Tag v0.7.N
+	  * ScreenSavers:
+	  * Tag v0.7.N
+
+2013-01-19 20:58  NiLuJe
+
+	* [r9035] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Update binaries (updated TC)
+
+2013-01-19 18:21  NiLuJe
+
+	* [r9026] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Add another resize setting, autocrop
+
+2013-01-19 17:41  NiLuJe
+
+	* [r9024] src/linkss/backups/custom[ADD], src/linkss/bin/linkss,
+	  src/linkss/bin/unlinkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Experimental basic support for FW 5.3.x custom screensavers thingy
+
+2013-01-19 01:06  NiLuJe
+
+	* [r9011] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Made a comment more accurate, I suck at maths. (The 10% comes frm
+	  the width, not the height.
+	  Anyway, it looks nice, don't touch the values, just fix the comment).
+
+2013-01-19 00:51  NiLuJe
+
+	* [r9009] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Port a few of the new stuff from the K5 version (black borders, q75)
+
+2013-01-19 00:32  NiLuJe
+
+	* [r9008] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Update for the latest Mobi Cover release
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix a stupid typo
+
+2013-01-19 00:27  NiLuJe
+
+	* [r9007] build/build-updates.sh, src/install.sh,
+	  src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Update for the latest Mobi Cover version
+
+2013-01-18 23:56  NiLuJe
+
+	* [r9005] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Add error checking to the pinfo banner creation
+
+2013-01-18 23:51  NiLuJe
+
+	* [r9004] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Use Caecilia Bold for the pinfo banner
+
+2013-01-18 23:39  NiLuJe
+
+	* [r9003] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Make LF-heavy pinfo strings more readable by relying on wordwrapping
+	  instead of honoring hard line breaks.
+
+2013-01-18 23:24  NiLuJe
+
+	* [r9002] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix pinfo compose
+
+2013-01-18 23:15  NiLuJe
+
+	* [r9001] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Sigh. Works even better ith the proper paths...
+
+2013-01-18 23:09  NiLuJe
+
+	* [r9000] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Go back to the default PNG encoding settings, it might be slower,
+	  but it usually leads to smaller files with our settings
+	  * Allow one to use black borders for the letterboxing (via the black
+	  trigger file)
+	  * Optionally overlay a banner built on the personal info from the
+	  settings at the bottom of the cover (via the pinfo trigger file)
+
+2012-12-10 17:32  NiLuJe
+
+	* [r8986] src/linkss/bin/linkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Braindump on the custom screensavers thing...
+
+2012-11-20 16:54  NiLuJe
+
+	* [r8965] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Tag v0.6.N
+
+2012-11-20 00:04  NiLuJe
+
+	* [r8964] src/linkss/bin/cover-watchdog-helper:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Sleep a wee bit more before checking the last book opened, to make
+	  sure the catalog is up to date...
+
+2012-11-19 23:31  NiLuJe
+
+	* [r8963] src/linkss/bin/cover-extract:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Do the dithering ourselves.
+
+2012-11-19 23:29  NiLuJe
+
+	* [r8962] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Now that we switched to Lanczos, go all the way and dither down to
+	  16 shades of grey ourselves, too.
+
+2012-11-19 18:57  NiLuJe
+
+	* [r8960] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Always use the Lanczos filter, it's sharper when upscaling
+
+2012-11-15 23:27  NiLuJe
+
+	* [r8954] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * Python:
+	  * Tag v0.2.N
+	  * USBNetwork:
+	  * Tag v0.6.N
+	  * ScreenSavers:
+	  * Tag v0.5.N
+
+2012-11-15 22:58  NiLuJe
+
+	* [r8952] src/linkss/bin/convert, src/linkss/bin/inotifywait,
+	  src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * TC update. (Bump FT, FC, KT, coreutils, mosh, htop)
+
+2012-11-11 19:10  NiLuJe
+
+	* [r8931] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Make sure we'll never use dictionary covers as screensaver
+
+2012-11-10 14:22  NiLuJe
+
+	* [r8902] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Implement the same early cache as on the K3 to avoid copying the
+	  same file
+	  on successive openings of the same book.
+
+2012-11-09 18:20  NiLuJe
+
+	* [r8897] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * tag v0.4.N
+
+2012-11-09 14:31  NiLuJe
+
+	* [r8885] src/linkss/bin/libkh5:
+	  
+	  Kindle Hacks:
+	  * Add 5.3 to the version detect code
+
+2012-11-08 23:16  NiLuJe
+
+	* [r8883] src/install.sh:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Forgot to set PYTHONHOME when generating MU bytecode (apparently not
+	  that big of an issue... xD)
+
+2012-11-07 16:16  NiLuJe
+
+	* [r8863] src/linkss/bin/inotifywait[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Add an inotifywait binary (used on the K4)
+
+2012-11-07 16:12  NiLuJe
+
+	* [r8861] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Bleh. Copy MU *before* we build the tarball, dummy.
+
+2012-11-07 14:49  NiLuJe
+
+	* [r8858] README:
+	  
+	  Kindle Hacks:
+	  * ScreenSavers:
+	  * Start implementing the cover mode
+
+2012-11-07 13:11  NiLuJe
+
+	* [r8856] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Forgot to quote it.
+
+2012-11-07 12:33  NiLuJe
+
+	* [r8855] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Avoid stupid cache misses on books with no EXTH 113 set
+
+2012-11-06 23:06  NiLuJe
+
+	* [r8852] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Tag v0.3.N
+
+2012-11-06 23:05  NiLuJe
+
+	* [r8851] src/linkss/bin/linkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * At boot, don't abort on empty screensavers dir when we're in cover
+	  or last mode,
+	  we're sure we'll have something to use in these cases.
+
+2012-11-06 18:11  NiLuJe
+
+	* [r8849] src/linkss/bin/cover-extract, src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Add a config trigger file to kill the AR in cover mode
+
+2012-11-06 18:07  NiLuJe
+
+	* [r8848] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Check the return status of the SQL query, too.
+
+2012-11-06 18:05  NiLuJe
+
+	* [r8847] src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Makes rue our folders exists before iterating over the screensavers
+	  folder's content...
+
+2012-11-06 16:01  NiLuJe
+
+	* [r8846] src/linkss/bin/cover-extract, src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Jot down some stuff todo...
+
+2012-11-03 18:45  NiLuJe
+
+	* [r8841] src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * When parsing the screensavers dir in cover mode, try
+	  to keep the last cover we used, instead of resetting to a blank page.
+
+2012-11-03 17:57  NiLuJe
+
+	* [r8838] build/build-updates.sh, src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Tag v0.2.N
+
+2012-11-03 17:08  NiLuJe
+
+	* [r8836] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Convert covers in grayscale ourselves, smaller file sizes,
+	  at the expense of twice the amount of processing time...
+	  (and needing to do some gamma tricks, keep an eye on that...)
+
+2012-11-03 14:14  NiLuJe
+
+	* [r8835] src/linkss/bin/shuffless,
+	  src/linkss/cover_cache/overlay-pw.png[ADD],
+	  src/linkss/cover_cache/overlay.png[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Implement a 'last page read' mode :).
+
+2012-11-03 00:41  NiLuJe
+
+	* [r8834] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Sigh. It's actually even better if we actually copy the file on
+	  cache hits...
+
+2012-11-02 22:21  NiLuJe
+
+	* [r8832] src/linkss/bin/cover-watchdog-helper,
+	  src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Jot down a minor thing to fix tomorrow...
+
+2012-11-02 21:44  NiLuJe
+
+	* [r8831] src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix another stupid typo breaking cover extraction...
+
+2012-11-02 21:34  NiLuJe
+
+	* [r8830] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix a stupid typo in the build script
+
+2012-11-02 21:30  NiLuJe
+
+	* [r8829] src/linkss/bin/convert[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Missed the convert binary ;)
+
+2012-11-02 21:29  NiLuJe
+
+	* [r8828] build/build-updates.sh:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Make sure we bundle Mobi Unpack correctly...
+
+2012-11-02 21:21  NiLuJe
+
+	* [r8827] src/install.sh, src/linkss/bin/cover-extract:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * If we have Python installed at install time, generate Python
+	  bytecode
+	  for Mobi Unpack
+
+2012-11-02 21:05  NiLuJe
+
+	* [r8826] src/linkss/bin/cover-extract, src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Quiet down some logs...
+
+2012-11-02 20:46  NiLuJe
+
+	* [r8825] src/linkss/bin/cover-extract,
+	  src/linkss/bin/cover-watchdog-helper, src/linkss/bin/libkh5:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Implement cover extraction/conversion :).
+
+2012-11-02 19:40  NiLuJe
+
+	* [r8824] src/linkss/bin/shuffless, src/linkss/cover_cache[ADD],
+	  src/linkss/cover_cache/default-pw.png[ADD],
+	  src/linkss/cover_cache/default.png[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Handle the cover mode during the parsing of the screensavers folder
+
+2012-11-02 19:30  NiLuJe
+
+	* [r8823] src/linkss/NO_autoreboot[DEL], src/linkss/autoreboot[CPY]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Enable the autoreboot by default, it makes support so much less
+	  painful.
+
+2012-11-02 19:29  NiLuJe
+
+	* [r8822] src/linkss/bin/cover-extract[ADD],
+	  src/linkss/bin/cover-watchdog[ADD],
+	  src/linkss/bin/cover-watchdog-helper[ADD], src/linkss/bin/libkh5,
+	  src/linkss/bin/linkss, src/linkss/bin/unlinkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Implement a second watchog for the cover extraction...
+
+2012-11-02 18:40  NiLuJe
+
+	* [r8820] README[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Setup the credits files
+
+2012-11-02 18:15  NiLuJe
+
+	* [r8819] src/linkss/bin/usb-watchdog-helper:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Forgot to commit you, too...
+
+2012-11-02 18:10  NiLuJe
+
+	* [r8818] src/linkss/bin/linkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Drop a hint in the config folder to help thrid-party tools ID the
+	  Kindle model
+
+2012-11-02 18:07  NiLuJe
+
+	* [r8817] src/linkss/bin/linkss, src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Make sure we never run with an empty screensavers folder, even after
+	  parsing
+
+2012-11-02 14:45  NiLuJe
+
+	* [r8809] src/linkss/etc/ImageMagick[ADD],
+	  src/linkss/etc/ImageMagick/coder.xml[ADD],
+	  src/linkss/etc/ImageMagick/colors.xml[ADD],
+	  src/linkss/etc/ImageMagick/delegates.xml[ADD],
+	  src/linkss/etc/ImageMagick/log.xml[ADD],
+	  src/linkss/etc/ImageMagick/magic.xml[ADD],
+	  src/linkss/etc/ImageMagick/mime.xml[ADD],
+	  src/linkss/etc/ImageMagick/policy.xml[ADD],
+	  src/linkss/etc/ImageMagick/quantization-table.xml[ADD],
+	  src/linkss/etc/ImageMagick/thresholds.xml[ADD],
+	  src/linkss/etc/ImageMagick/type-dejavu.xml[ADD],
+	  src/linkss/etc/ImageMagick/type-ghostscript.xml[ADD],
+	  src/linkss/etc/ImageMagick/type-windows.xml[ADD],
+	  src/linkss/etc/ImageMagick/type.xml[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Add the ImageMagick config files
+
+2012-11-02 00:06  NiLuJe
+
+	* [r8803] src/linkss/bin/linkss:
+	  
+	  Kindle Touch Hacks:
+	  * X-TC:
+	  * Okay, Python works. Now to tweak the xcompile patch...
+
+2012-10-31 23:37  NiLuJe
+
+	* [r8794] src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Mmmh, quotes!
+
+2012-10-31 20:57  NiLuJe
+
+	* [r8792] src/linkss/info.txt:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix thread URL now that it's live.
+
+2012-10-31 20:51  NiLuJe
+
+	* [r8789] src/linkss.conf:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Kill a FIXME comment, it works ;).
+
+2012-10-31 18:49  NiLuJe
+
+	* [r8785] src/linkss/bin/shuffless, src/linkss/discarded[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * More safety measures to avoid losing files in case of name
+	  clashes...
+
+2012-10-31 18:21  NiLuJe
+
+	* [r8784] src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Minor comment touch ups
+
+2012-10-31 18:18  NiLuJe
+
+	* [r8783] src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Take the files in overlflow into account when asking to randomize
+	  screensavers
+
+2012-10-31 18:04  NiLuJe
+
+	* [r8782] src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix a few comments...
+
+2012-10-31 17:57  NiLuJe
+
+	* [r8781] src/linkss/bin/shuffless, src/linkss/staging[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Fix filenames parsing (avoid losing files to nameclashes)
+
+2012-10-31 17:20  NiLuJe
+
+	* [r8780] src/install.sh,
+	  src/linkss/screensavers/00_you_can_delete_me-pw.png[ADD],
+	  src/linkss/screensavers/00_you_can_delete_me.png:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Add a properly sized default screensaver for the PW
+
+2012-10-31 16:05  NiLuJe
+
+	* [r8779] src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Always print a verbose feedback that we're parsing the screensavers
+	  filenames...
+
+2012-10-31 15:51  NiLuJe
+
+	* [r8778] src/linkss/bin/shuffless:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * Kill dead code
+
+2012-10-31 15:50  NiLuJe
+
+	* [r8777] src/linkss/bin/shuffless, src/linkss/bin/unlinkss:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * First shot at the rename/shuffle on the K5...
+
+2012-10-31 15:11  NiLuJe
+
+	* [r8776] build[ADD], build/build-updates.sh[ADD], build/consts[ADD],
+	  build/consts/patchconsts[ADD], build/ui[ADD], build/ui/blanket[ADD],
+	  build/ui/progressbar[ADD], src/install.sh[ADD], src/linkss.conf[ADD],
+	  src/linkss/NO_autoreboot[ADD], src/linkss/auto[ADD],
+	  src/linkss/backup[ADD], src/linkss/backups[ADD],
+	  src/linkss/bin/libkh5[ADD], src/linkss/bin/linkss[ADD],
+	  src/linkss/bin/shuffless[ADD], src/linkss/bin/unlinkss[ADD],
+	  src/linkss/bin/usb-watchdog[ADD],
+	  src/linkss/bin/usb-watchdog-helper[ADD], src/linkss/etc[ADD],
+	  src/linkss/info.txt[ADD], src/linkss/overflow[ADD],
+	  src/linkss/run[ADD], src/linkss/screensavers[ADD],
+	  src/linkss/screensavers/00_you_can_delete_me.png[ADD],
+	  src/uninstall.sh[ADD]:
+	  
+	  Kindle Touch Hacks:
+	  * ScreenSavers:
+	  * First shot at porting this to the K5 (WIP)
+
+2012-10-12 04:28  NiLuJe
+
+	* [r8692] src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Touch Hacks:
+	  * Update binaries (Updated TC, FT, FC, KT, mosh)
+
+2012-09-15 21:00  NiLuJe
+
+	* [r8513] src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Touch Hacks:
+	  * Update K5 binaries
+
+2012-06-18 16:21  NiLuJe
+
+	* [r8222] src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Go back to non-LTO binaries, to avoid stuff blowing up in the middle
+	  of execution because of bad code generation, like I encountered with
+	  OpenSSH... ;).
+
+2012-06-18 15:00  NiLuJe
+
+	* [r8217] src/linkss/bin/shlock:
+	  
+	  Kindle Hacks:
+	  * USBNetwork:
+	  * More LTO fixes & LTO binaries ;)
+
+2012-06-17 13:23  NiLuJe
+
+	* [r8197] src/linkss/bin/shlock, src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Rebuild binaries with LTO...
+
+2012-06-15 16:17  NiLuJe
+
+	* [r8177] src/linkss/bin/sort:
+	  
+	  Kindle Hacks:
+	  * Update all the binaries (built with proper LDFLAGS)
+
+2012-06-14 23:58  NiLuJe
+
+	* [r8170] .[ADD], src[ADD], src/linkss[ADD], src/linkss/bin[ADD],
+	  src/linkss/bin/shlock[ADD], src/linkss/bin/sort[ADD]:
+	  
+	  Kindle Hacks:
+	  * All hail the Cortex A8! (K4/K5 binaries ;p)
+

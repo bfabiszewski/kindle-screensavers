@@ -1,0 +1,263 @@
+#!/bin/sh
+#
+# $Id: linkss 16254 2019-07-23 21:58:00Z NiLuJe $
+#
+
+# Get hackname from the script's path (NOTE: Will only work for scripts called from /mnt/us/${KH_HACKNAME}/bin)
+KH_HACKNAME="${0##/mnt/us/}"
+KH_HACKNAME="${KH_HACKNAME%%/bin/*}"
+
+# Try to pull our custom helper lib
+_KH_FUNCS="/mnt/us/${KH_HACKNAME}/bin/libkh5"
+if [ -f ${_KH_FUNCS} ] ; then
+    . ${_KH_FUNCS}
+else
+    # Pull default helper functions for logging
+    _FUNCTIONS=/etc/upstart/functions
+    [ -f ${_FUNCTIONS} ] && . ${_FUNCTIONS}
+    # We couldn't get our custom lib, abort
+    f_log W linkss script "" "couldn't source libkh5 from '${KH_HACKNAME}'"
+    exit 0
+fi
+
+if [ -f ${LINKSS_BASEDIR}/backup ] ; then
+    kh_msg "backing up default screensavers" I
+    # Just in case, create our backup dirs
+    [ -d ${LINKSS_BASEDIR}/backups ] || mkdir ${LINKSS_BASEDIR}/backups
+
+    cp -f /usr/share/blanket/screensaver/* ${LINKSS_BASEDIR}/backups/
+
+    # Backup Amazon's 'custom' screensavers, too...
+    if [ -d /var/local/custom_screensavers ] ; then
+        [ -d ${LINKSS_BASEDIR}/backups/custom ] || mkdir ${LINKSS_BASEDIR}/backups/custom
+        cp -f /var/local/custom_screensavers/* ${LINKSS_BASEDIR}/backups/custom/
+    fi
+
+    # And do it only once ;)
+    rm -f ${LINKSS_BASEDIR}/backup
+fi
+
+# Sanity check... Don't do anything if the screensavers dir is empty (...unless we're in cover or last mode ;))
+if [ ! -f "${LINKSS_BASEDIR}/cover" -a ! -f "${LINKSS_BASEDIR}/last" ] ; then
+    [ -d ${LINKSS_BASEDIR}/screensavers -a "x$( ls -A ${LINKSS_BASEDIR}/screensavers 2> /dev/null )" != x ] || kh_die "we don't have any custom screensavers, aborting" a "no screensavers, aborting"
+fi
+
+# Clean our custom screensavers directory to avoid weird bugs
+# Let's delete the Windows thumbs.db file if it's there.
+[ -f ${LINKSS_BASEDIR}/screensavers/thumbs.db ] && rm -f ${LINKSS_BASEDIR}/screensavers/thumbs.db
+# Or windows folder config file if it's there.
+[ -f ${LINKSS_BASEDIR}/screensavers/Desktop.ini ] && rm -f ${LINKSS_BASEDIR}/screensavers/Desktop.ini
+# And mac's folder config file.
+[ -f ${LINKSS_BASEDIR}/screensavers/.DS_Store ] && rm -f ${LINKSS_BASEDIR}/screensavers/.DS_Store
+# And those pesky mac ._ files.
+for macthumb in ${LINKSS_BASEDIR}/screensavers/._* ; do
+    [ -f "${macthumb}" ] && rm -f "${macthumb}"
+done
+
+# Sanity check, if we can't figure out the Kindle model, we don't know how to rename our files, abort
+[ "${IS_TOUCH}" == "false" -a "${IS_PW}" == "false" -a "${IS_KV}" == "false" -a "${IS_PW3}" == "false" -a "${IS_KOA}" == "false" -a "${IS_KT3}" == "false" -a "${IS_KOA2}" == "false" -a "${IS_PW4}" == "false" -a "${IS_KT4}" == "false" -a "${IS_KOA3}" == "false" ] && kh_die "unknown kindle model, aborting" a
+
+# If we're in cover or last mode, we'll use a tmpfs based mount point to avoid unnecessary IO.
+# Also, we create our own instead of using /var/tmp to avoid OOS issues on /var/tmp in case something goes wrong on our end...
+# And we create it right now so that shuffless has something to work on for the sanitization process.
+if [ -f ${LINKSS_BASEDIR}/cover -o -f ${LINKSS_BASEDIR}/last ] ; then
+    # We create it in a tmpfs, so we need to create our target directory
+    [ -d ${LINKSS_TMPFS_BASEDIR} ] || mkdir -p ${LINKSS_TMPFS_BASEDIR}
+
+    # Don't mount twice & handle crashes... We may have a leftover mount state file
+    if ! grep -q "^tmpfs ${LINKSS_TMPFS_BASEDIR}" /proc/mounts ; then
+        kh_msg "mounting screensavers tmpfs" I
+        # We shouldn't ever need more than a couple MB of space at worst, but go with 8 for safety, or to handle crazy large covers
+        mount -t tmpfs -o size=4M tmpfs ${LINKSS_TMPFS_BASEDIR}
+
+        # It's a tmpfs, so we need to create our directory structure
+        mkdir -p ${LINKSS_TMPFS_CACHE}
+        mkdir -p ${LINKSS_TMPFS_COVERDIR}
+
+        # Let our stop script know that we've got things to unmount
+        touch ${LINKSS_BASEDIR}/mounted_tmpfs
+    else
+        kh_msg "looks like the screensavers tmpfs is already mounted" W a "screensavers tmpfs already mounted"
+        # Make sure it's still flagged
+        touch ${LINKSS_BASEDIR}/mounted_tmpfs
+    fi
+fi
+
+# Sanity checks, in case the install is inconsistent
+if [ -f ${LINKSS_SHUFFLE} ] ; then
+    # Make sure it's exec'able
+    [ -x ${LINKSS_SHUFFLE} ] || chmod +x ${LINKSS_SHUFFLE}
+    # Randomize screensavers if we asked for it
+    ${LINKSS_SHUFFLE}
+
+    # If it failed for some reason (empty screensavers directory after the parsing?), abort
+    if [ $? -ne 0 ] ; then
+        kh_die "something went wrong when parsing the screensavers folder, aborting" v "parsing failure, aborting"
+    fi
+else
+    # Can't make sure that the files are named properly, abort
+    kh_die "couldn't find the rename script, aborting" a "no rename script, aborting"
+fi
+
+# Make sure the target folder actually exists
+if [ -d /usr/share/blanket/screensaver ] ; then
+    # Handle the cover & last mode, where we mount from a tmpfs
+    if [ -f ${LINKSS_BASEDIR}/mounted_tmpfs ] ; then
+        # Don't mount twice & handle crashes... We may have a leftover mount state file
+        if ! grep -q "^tmpfs /usr/share/blanket/screensaver" /proc/mounts ; then
+            kh_msg "mounting custom screensavers from tmpfs" I
+            mount --bind ${LINKSS_TMPFS_COVERDIR} /usr/share/blanket/screensaver
+
+            # Let our stop script know that we've got things to unmount
+            touch ${LINKSS_BASEDIR}/mounted_ss_tmpfs
+        else
+            kh_msg "looks like the custom screensavers are already mounted from tmpfs" W a "tmpfs screensavers already mounted"
+            # Make sure it's still flagged
+            touch ${LINKSS_BASEDIR}/mounted_ss_tmpfs
+        fi
+    else
+        # Don't mount twice & handle crashes... We may have a leftover mount state file
+        if ! grep -q "^fsp /usr/share/blanket/screensaver" /proc/mounts ; then
+            kh_msg "mounting custom screensavers" I
+            mount --bind ${LINKSS_BASEDIR}/screensavers /usr/share/blanket/screensaver
+
+            # Let our stop script know that we've got things to unmount
+            touch ${LINKSS_BASEDIR}/mounted_ss
+        else
+            kh_msg "looks like the custom screensavers are already mounted" W a "screensavers already mounted"
+            # Make sure it's still flagged
+            touch ${LINKSS_BASEDIR}/mounted_ss
+        fi
+    fi
+fi
+
+# NOTE: Experimental handling of the 'custom' screensavers thingy from 5.3.x...
+if [ -f ${LINKSS_BASEDIR}/beta ] ; then
+    # TODO: Make it more robust (Check devicecap? Mark our files immutable with chattr +i?)
+    if [ -d /var/local/custom_screensavers ] ; then
+        # Handle the cover & last mode, where we mount from a tmpfs
+        if [ -f ${LINKSS_BASEDIR}/mounted_tmpfs ] ; then
+            # Don't mount twice & handle crashes... We may have a leftover mount state file
+            if ! grep -q "^tmpfs /var/local/custom_screensavers" /proc/mounts ; then
+                kh_msg "mounting custom screensavers (custom) from tmpfs" I
+                mount --bind ${LINKSS_TMPFS_COVERDIR} /var/local/custom_screensavers
+
+                # Let our stop script know that we've got things to unmount
+                touch ${LINKSS_BASEDIR}/mounted_custom_ss_tmpfs
+            else
+                kh_msg "looks like the custom screensavers (custom) are already mounted from tmpfs" W a "tmpfs custom screensavers already mounted"
+                # Make sure it's still flagged
+                touch ${LINKSS_BASEDIR}/mounted_custom_ss_tmpfs
+            fi
+        else
+            # Don't mount twice & handle crashes... We may have a leftover mount state file
+            if ! grep -q "^fsp /var/local/custom_screensavers" /proc/mounts ; then
+                kh_msg "mounting custom screensavers (custom)" I
+                mount --bind ${LINKSS_BASEDIR}/screensavers /var/local/custom_screensavers
+
+                # Let our stop script know that we've got things to unmount
+                touch ${LINKSS_BASEDIR}/mounted_custom_ss
+            else
+                kh_msg "looks like the custom screensavers (custom) are already mounted" W a "custom screensavers already mounted"
+                # Make sure it's still flagged
+                touch ${LINKSS_BASEDIR}/mounted_custom_ss
+            fi
+        fi
+    fi
+fi
+
+# Drop a hint to help third-party tools identify our model...
+if [ "${IS_KOA3}" == "true" ] ; then
+    touch "${LINKSS_BASEDIR}/etc/is_a_koa3"
+    rm -f "${LINKSS_BASEDIR}/etc/is_a_kt4" "${LINKSS_BASEDIR}/etc/is_a_pw4" "${LINKSS_BASEDIR}/etc/is_a_koa2" "${LINKSS_BASEDIR}/etc/is_a_koa" "${LINKSS_BASEDIR}/etc/is_a_pw3" "${LINKSS_BASEDIR}/etc/is_a_kv" "${LINKSS_BASEDIR}/etc/is_a_pw" "${LINKSS_BASEDIR}/etc/is_a_touch"
+elif [ "${IS_KT4}" == "true" ] ; then
+    touch "${LINKSS_BASEDIR}/etc/is_a_kt4"
+    rm -f "${LINKSS_BASEDIR}/etc/is_a_koa3" "${LINKSS_BASEDIR}/etc/is_a_pw4" "${LINKSS_BASEDIR}/etc/is_a_koa2" "${LINKSS_BASEDIR}/etc/is_a_koa" "${LINKSS_BASEDIR}/etc/is_a_pw3" "${LINKSS_BASEDIR}/etc/is_a_kv" "${LINKSS_BASEDIR}/etc/is_a_pw" "${LINKSS_BASEDIR}/etc/is_a_touch"
+elif [ "${IS_PW4}" == "true" ] ; then
+    touch "${LINKSS_BASEDIR}/etc/is_a_pw4"
+    rm -f "${LINKSS_BASEDIR}/etc/is_a_koa3" "${LINKSS_BASEDIR}/etc/is_a_kt4" "${LINKSS_BASEDIR}/etc/is_a_koa2" "${LINKSS_BASEDIR}/etc/is_a_koa" "${LINKSS_BASEDIR}/etc/is_a_pw3" "${LINKSS_BASEDIR}/etc/is_a_kv" "${LINKSS_BASEDIR}/etc/is_a_pw" "${LINKSS_BASEDIR}/etc/is_a_touch"
+elif [ "${IS_KOA2}" == "true" ] ; then
+    touch "${LINKSS_BASEDIR}/etc/is_a_koa2"
+    rm -f "${LINKSS_BASEDIR}/etc/is_a_koa3" "${LINKSS_BASEDIR}/etc/is_a_kt4" "${LINKSS_BASEDIR}/etc/is_a_pw4" "${LINKSS_BASEDIR}/etc/is_a_koa" "${LINKSS_BASEDIR}/etc/is_a_pw3" "${LINKSS_BASEDIR}/etc/is_a_kv" "${LINKSS_BASEDIR}/etc/is_a_pw" "${LINKSS_BASEDIR}/etc/is_a_touch"
+elif [ "${IS_KV}" == "true" ] ; then
+    touch "${LINKSS_BASEDIR}/etc/is_a_kv"
+    rm -f "${LINKSS_BASEDIR}/etc/is_a_koa3" "${LINKSS_BASEDIR}/etc/is_a_kt4" "${LINKSS_BASEDIR}/etc/is_a_pw4" "${LINKSS_BASEDIR}/etc/is_a_koa2" "${LINKSS_BASEDIR}/etc/is_a_koa" "${LINKSS_BASEDIR}/etc/is_a_pw3" "${LINKSS_BASEDIR}/etc/is_a_pw" "${LINKSS_BASEDIR}/etc/is_a_touch"
+elif [ "${IS_PW3}" == "true" ] ; then
+    touch "${LINKSS_BASEDIR}/etc/is_a_pw3"
+    rm -f "${LINKSS_BASEDIR}/etc/is_a_koa3" "${LINKSS_BASEDIR}/etc/is_a_kt4" "${LINKSS_BASEDIR}/etc/is_a_pw4" "${LINKSS_BASEDIR}/etc/is_a_koa2" "${LINKSS_BASEDIR}/etc/is_a_koa" "${LINKSS_BASEDIR}/etc/is_a_kv" "${LINKSS_BASEDIR}/etc/is_a_pw" "${LINKSS_BASEDIR}/etc/is_a_touch"
+elif [ "${IS_KOA}" == "true" ] ; then
+    touch "${LINKSS_BASEDIR}/etc/is_a_koa"
+    rm -f "${LINKSS_BASEDIR}/etc/is_a_koa3" "${LINKSS_BASEDIR}/etc/is_a_kt4" "${LINKSS_BASEDIR}/etc/is_a_pw4" "${LINKSS_BASEDIR}/etc/is_a_koa2" "${LINKSS_BASEDIR}/etc/is_a_pw3" "${LINKSS_BASEDIR}/etc/is_a_kv" "${LINKSS_BASEDIR}/etc/is_a_pw" "${LINKSS_BASEDIR}/etc/is_a_touch"
+elif [ "${IS_PW}" == "true" ] ; then
+    touch "${LINKSS_BASEDIR}/etc/is_a_pw"
+    rm -f "${LINKSS_BASEDIR}/etc/is_a_koa3" "${LINKSS_BASEDIR}/etc/is_a_kt4" "${LINKSS_BASEDIR}/etc/is_a_pw4" "${LINKSS_BASEDIR}/etc/is_a_koa2" "${LINKSS_BASEDIR}/etc/is_a_koa" "${LINKSS_BASEDIR}/etc/is_a_pw3" "${LINKSS_BASEDIR}/etc/is_a_kv" "${LINKSS_BASEDIR}/etc/is_a_touch"
+else
+    touch "${LINKSS_BASEDIR}/etc/is_a_touch"
+    rm -f "${LINKSS_BASEDIR}/etc/is_a_koa3" "${LINKSS_BASEDIR}/etc/is_a_kt4" "${LINKSS_BASEDIR}/etc/is_a_pw4" "${LINKSS_BASEDIR}/etc/is_a_koa2" "${LINKSS_BASEDIR}/etc/is_a_koa" "${LINKSS_BASEDIR}/etc/is_a_pw3" "${LINKSS_BASEDIR}/etc/is_a_kv" "${LINKSS_BASEDIR}/etc/is_a_pw"
+fi
+
+# If needed (ie. hack applied), launch our litle usb unplug watchdog
+if [ -f ${LINKSS_BASEDIR}/mounted_ss -o -f ${LINKSS_BASEDIR}/mounted_ss_tmpfs ] ; then
+    # Launch our little watchdog to catch the usb unplug event, but make it optionnal (and don't launch it if linkfonts' already up)
+    if [ -f ${LINKSS_BASEDIR}/autoreboot -a ! -f ${LINKFONTS_BASEDIR}/autoreboot ] ; then
+        # Avoid running multiple watchdogs by cleaning up somewhat forcefully...
+        # Handle crashes, and runlevel switches... We may have a leftover pidfile with stale pids, so take care of it ourselves (start-stop-daemon doesn't check if the daemon's alive)
+        if [ -f ${WATCHDOG_PID} ] ; then
+            for pid in $( cat ${WATCHDOG_PID} ) ; do
+                # If we do indeed have one, then check its content, and kill everything pertaining to the watchdog, to avoid having part of the trio running without the others
+                if ps -fp ${pid} | grep -q -e "${WATCHDOG_DAEMON}" -e "usbPlugOut" -e "${WATCHDOG_HELPER}" ; then
+                    kh_msg "killing stale USB watchdog (${pid})" W
+                    kill -TERM ${pid} 2> /dev/null
+                fi
+            done
+            # And then remove the pidfile
+            [ -f ${WATCHDOG_PID} ] && rm -f ${WATCHDOG_PID}
+        fi
+        # Make sure our watchdog scripts are there
+        if [ -f ${WATCHDOG_DAEMON} -a -f ${WATCHDOG_HELPER} ] ; then
+            # Make sure they're executable
+            [ -x ${WATCHDOG_DAEMON} ] || chmod +x ${WATCHDOG_DAEMON}
+            [ -x ${WATCHDOG_HELPER} ] || chmod +x ${WATCHDOG_HELPER}
+            # And finally, run it
+            kh_msg "launching usb watchdog" I q
+            /sbin/start-stop-daemon -m -q -p ${WATCHDOG_PID} -x ${WATCHDOG_DAEMON} -S -b
+            if [ $? -ne 0 ] ; then
+                kh_msg "failed to start usb watchdog" E v
+            fi
+        fi
+    fi
+fi
+
+# Same thing for the cover watchdog
+if [ -f ${LINKSS_BASEDIR}/mounted_ss -o -f ${LINKSS_BASEDIR}/mounted_ss_tmpfs ] ; then
+    # Launch our little watchdog to catch the switch to reader booklet event, but make it optionnal
+    if [ -f ${LINKSS_BASEDIR}/cover ] ; then
+        # Avoid running multiple watchdogs by cleaning up somewhat forcefully...
+        # Handle crashes, and runlevel switches... We may have a leftover pidfile with stale pids, so take care of it ourselves (start-stop-daemon doesn't check if the daemon's alive)
+        if [ -f ${COVER_WATCHDOG_PID} ] ; then
+            for pid in $( cat ${COVER_WATCHDOG_PID} ) ; do
+                # If we do indeed have one, then check its content, and kill everything pertaining to the watchdog, to avoid having part of the trio running without the others
+                if ps -fp ${pid} | grep -q -e "${COVER_WATCHDOG_DAEMON}" -e "appActivating" -e "${COVER_WATCHDOG_HELPER}" ; then
+                    kh_msg "killing stale cover watchdog (${pid})" W
+                    kill -TERM ${pid} 2> /dev/null
+                fi
+            done
+            # And then remove the pidfile
+            [ -f ${COVER_WATCHDOG_PID} ] && rm -f ${COVER_WATCHDOG_PID}
+        fi
+        # Make sure our watchdog scripts are there
+        if [ -f ${COVER_WATCHDOG_DAEMON} -a -f ${COVER_WATCHDOG_HELPER} ] ; then
+            # Make sure they're executable
+            [ -x ${COVER_WATCHDOG_DAEMON} ] || chmod +x ${COVER_WATCHDOG_DAEMON}
+            [ -x ${COVER_WATCHDOG_HELPER} ] || chmod +x ${COVER_WATCHDOG_HELPER}
+            # And finally, run it
+            kh_msg "launching cover watchdog" I q
+            /sbin/start-stop-daemon -m -q -p ${COVER_WATCHDOG_PID} -x ${COVER_WATCHDOG_DAEMON} -S -b
+            if [ $? -ne 0 ] ; then
+                kh_msg "failed to start cover watchdog" E v
+            fi
+        fi
+    fi
+fi
+
+return 0
