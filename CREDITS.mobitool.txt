@@ -1,0 +1,5 @@
+CREDITS
+
+  mobitool is part of libmobi, by Bartek Fabiszewski, licensed under the GNU GPL version 3 (http://www.gnu.org/licenses/gpl.html).
+  https://github.com/bfabiszewski/libmobi
+

@@ -1,9 +1,0 @@
-CREDITS
-
-  kfxmeta.py: KFX Meta, by jhowell
-(http://www.mobileread.com/forums/showpost.php?p=3176029&postcount=89)
-(And this trimmed down version lives here: https://svn.ak-team.com/svn/Configs/trunk/Kindle/Touch_Hacks/MobiCover/Python/)
-
-  *.py: KindleUnpack, licensed under the GNU General Public License version 3 (http://www.gnu.org/licenses/gpl.html).
-(http://www.mobileread.com/forums/showthread.php?t=61986)
-(And this trimmed down version lives here: https://svn.ak-team.com/svn/Configs/trunk/Kindle/Touch_Hacks/MobiCover/Python/)

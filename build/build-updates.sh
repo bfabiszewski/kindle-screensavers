@@ -6,11 +6,12 @@
 HACKNAME="linkss"
 HACKDIR="ScreenSavers"
 PKGNAME="${HACKNAME}"
-PKGVER="0.25.N"
+PKGVER="0.25.N.mobitool"
 
 # Setup KindleTool packaging metadata flags to avoid cluttering the invocations
-PKGREV="$(svnversion -c .. | awk '{print $NF}' FS=':' | tr -d 'P')"
-KT_PM_FLAGS=( "-xPackageName=${HACKDIR}" "-xPackageVersion=${PKGVER}-r${PKGREV}" "-xPackageAuthor=NiLuJe" "-xPackageMaintainer=NiLuJe" "-X" )
+# PKGREV="$(svnversion -c .. | awk '{print $NF}' FS=':' | tr -d 'P')"
+PKGREV=0
+KT_PM_FLAGS=( "-xPackageName=${HACKDIR}" "-xPackageVersion=${PKGVER}-r${PKGREV}" "-xPackageAuthor=NiLuJe" "-xPackageMaintainer=NiLuJe" )
 
 # We need kindletool (https://github.com/NiLuJe/KindleTool) in $PATH
 if (( $(kindletool version | wc -l) == 1 )) ; then
@@ -35,53 +36,49 @@ fi
 
 ## Install
 
-# Go away if we don't have the PW2 tree checked out for the A9 binaries...
-if [[ ! -d "../../../PW2_Hacks" ]] ; then
-	echo "Skipping ScreenSavers build, we're missing the A9 binaries (from the PW2_Hacks tree)"
-	exit 1
-fi
+# # Go away if we don't have the PW2 tree checked out for the A9 binaries...
+# if [[ ! -d "../../../PW2_Hacks" ]] ; then
+# 	echo "Skipping ScreenSavers build, we're missing the A9 binaries (from the PW2_Hacks tree)"
+# 	exit 1
+# fi
 
-## Go away if we don't have the MobiCover tree checked out...
-if [[ ! -d "../../MobiCover" ]] ; then
-	echo "Skipping ScreenSavers build, we're missing MobiCover"
-	exit 1
-fi
+# ## Go away if we don't have the MobiCover tree checked out...
+# if [[ ! -d "../../MobiCover" ]] ; then
+# 	echo "Skipping ScreenSavers build, we're missing MobiCover"
+# 	exit 1
+# fi
 
-## Go away if we don't have the ScreenSavers tree for the legacy version checked out...
-if [[ ! -d "../../../Hacks/ScreenSavers" ]] ; then
-	echo "Skipping ScreenSavers build, we're missing the KUAL extension (from the Hacks tree)"
-	exit 1
-fi
+# ## Go away if we don't have the ScreenSavers tree for the legacy version checked out...
+# if [[ ! -d "../../../Hacks/ScreenSavers" ]] ; then
+# 	echo "Skipping ScreenSavers build, we're missing the KUAL extension (from the Hacks tree)"
+# 	exit 1
+# fi
 
-# Pickup our common stuff... We leave it in our staging wd so it ends up in the source package.
-if [[ ! -d "../../Common" ]] ; then
-	echo "The tree isn't checked out in full, missing the Common directory..."
-	exit 1
-fi
-# LibOTAUtils 5
-ln -f ../../Common/lib/libotautils5 ./libotautils5
-# XZ Utils
-ln -f ../../Common/bin/xzdec ./xzdec
-# LibKH 5
-for common_lib in libkh5 ; do
-	ln -f ../../Common/lib/${common_lib} ../src/${HACKNAME}/bin/${common_lib}
-done
-# USB Watchdog
-for common_bin in usb-watchdog usb-watchdog-helper ; do
-	ln -f ../../Common/bin/${common_bin} ../src/${HACKNAME}/bin/${common_bin}
-done
-# FBInk
-ln -f ../../Common/bin/fbink ../src/${HACKNAME}/bin/fbink
+# # Pickup our common stuff... We leave it in our staging wd so it ends up in the source package.
+# if [[ ! -d "../../Common" ]] ; then
+# 	echo "The tree isn't checked out in full, missing the Common directory..."
+# 	exit 1
+# fi
+# # LibOTAUtils 5
+# ln -f ../../Common/lib/libotautils5 ./libotautils5
+# # XZ Utils
+ln -f kindle_binaries/KT/bin/xzdec ./xzdec
+# # LibKH 5
+# for common_lib in libkh5 ; do
+# 	ln -f ../../Common/lib/${common_lib} ../src/${HACKNAME}/bin/${common_lib}
+# done
+# # USB Watchdog
+# for common_bin in usb-watchdog usb-watchdog-helper ; do
+# 	ln -f ../../Common/bin/${common_bin} ../src/${HACKNAME}/bin/${common_bin}
+# done
+# # FBInk
+# ln -f ../../Common/bin/fbink ../src/${HACKNAME}/bin/fbink
 
-# Make sure we bundle our KUAL extension...
-cp -avf ../../../Hacks/ScreenSavers/src/extensions ../src/
+# # Make sure we bundle our KUAL extension...
+# cp -avf ../../../Hacks/ScreenSavers/src/extensions ../src/
 
-# Make sure we bundle our KindleUnpack & KFXMeta versions...
-for mobicover_bin in kindleunpack.py mobi_uncompress.py path.py utf8_utils.py kfxmeta.py ; do
-	ln -f ../../MobiCover/Python/${mobicover_bin} ../src/${HACKNAME}/bin/${mobicover_bin}
-done
-# And remove deprecated stuff...
-rm -f ../src/${HACKNAME}/bin/mobi_unpack.py
+# # mobitool (./configure --with-libxml2=no  --enable-tools-static && make)
+# ln -f ../../libmobi/tools/mobitool ../src/${HACKNAME}/bin/mobitool
 
 
 # Archive custom directory
@@ -107,16 +104,16 @@ for my_bin in ${KINDLE_MODEL_BINARIES} ; do
 done
 # Append A9 binaries
 for my_bin in ${KINDLE_MODEL_BINARIES} ; do
-	${TAR_BIN} --hard-dereference --owner root --group root --transform "s,^PW2_Hacks/${HACKDIR}/,,S" --show-transformed-names -rvf ${HACKNAME}.tar ../../../PW2_Hacks/${HACKDIR}/src/${HACKNAME}/${my_bin}
+	${TAR_BIN} --hard-dereference --owner root --group root --transform "s,^kindle_binaries/PW2/,src/${HACKNAME}/,S" --show-transformed-names -rvf ${HACKNAME}.tar kindle_binaries/PW2/${my_bin}
 done
 # Do the same for FBInk
 ${TAR_BIN} --delete -vf ${HACKNAME}.tar src/${HACKNAME}/bin/fbink
-${TAR_BIN} --hard-dereference --owner root --group root --transform "s,^PW2_Hacks/Common/,src/${HACKNAME}/,S" --show-transformed-names -rvf ${HACKNAME}.tar ../../../PW2_Hacks/Common/bin/fbink
+${TAR_BIN} --hard-dereference --owner root --group root --transform "s,^kindle_binaries/PW2/,src/${HACKNAME}/,S" --show-transformed-names -rvf ${HACKNAME}.tar kindle_binaries/PW2/bin/fbink
 # xz it...
 xz ${HACKNAME}.tar
 
 # Speaking of, we need our own xzdec binary, too!
-ln -f ../../../PW2_Hacks/Common/bin/xzdec ./xzdec
+ln -f kindle_binaries/PW2/bin/xzdec ./xzdec
 
 # Build the install package (>= Wario)
 kindletool create ota2 "${KT_PM_FLAGS[@]}" -d paperwhite2 -d basic -d voyage -d paperwhite3 -d oasis -d basic2 -d oasis2 -d paperwhite4 -d basic3 -d oasis3 libotautils5 install.sh ${HACKNAME}.tar.xz xzdec ${HACKNAME}.conf Update_${PKGNAME}_${PKGVER}_install_pw2_kt2_kv_pw3_koa_kt3_koa2_pw4_kt4.bin

@@ -164,14 +164,6 @@ cp -f ${HACKNAME}.conf /etc/upstart/${HACKNAME}.conf
 
 otautils_update_progressbar
 
-# Generating Python bytecode for Mobi Unpack
-logmsg "I" "install" "" "generating python bytecode"
-# We need python, of course ;)
-if [ -f "/mnt/us/python/bin/python2.7" ] ; then
-    /mnt/us/python/bin/python2.7 -m py_compile /mnt/us/${HACKNAME}/bin/kindleunpack.py /mnt/us/${HACKNAME}/bin/mobi_uncompress.py /mnt/us/${HACKNAME}/bin/path.py /mnt/us/${HACKNAME}/bin/utf8_utils.py /mnt/us/${HACKNAME}/bin/kfxmeta.py
-    /mnt/us/python/bin/python2.7 -O -m py_compile /mnt/us/${HACKNAME}/bin/kindleunpack.py /mnt/us/${HACKNAME}/bin/mobi_uncompress.py /mnt/us/${HACKNAME}/bin/path.py /mnt/us/${HACKNAME}/bin/utf8_utils.py /mnt/us/${HACKNAME}/bin/kfxmeta.py
-fi
-
 otautils_update_progressbar
 
 logmsg "I" "install" "" "cleaning up"
